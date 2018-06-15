@@ -98,13 +98,3 @@ routingItem base_url =
     , ( "About", "", AboutRoute, base_url ++ "/about" )
     , ( "Teachers", "", TeachersRoute, base_url ++ "/teachers" )
     ]
-
-
-footerRoutingItem : List ( String, String, String )
-footerRoutingItem =
-    [ ( "Github", "fa fa-github fa-stack-1x fa-inverse", "https://github.com/meilab" )
-
-    --, ( "Wechat", "fa fa-weixin fa-stack-1x fa-inverse", "https://weixin.com" )
-    , ( "Weibo", "fa fa-weibo fa-stack-1x fa-inverse", "http://weibo.com/meilab" )
-    , ( "Linkedin", "fa fa-linkedin fa-stack-1x fa-inverse", "https://linkedin.com/in/meilab" )
-    ]

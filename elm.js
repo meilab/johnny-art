@@ -12333,19 +12333,6 @@ var _krisajenkins$remotedata$RemoteData$update = F2(
 		}
 	});
 
-var _meilab$meilab$Routing$footerRoutingItem = {
-	ctor: '::',
-	_0: {ctor: '_Tuple3', _0: 'Github', _1: 'fa fa-github fa-stack-1x fa-inverse', _2: 'https://github.com/meilab'},
-	_1: {
-		ctor: '::',
-		_0: {ctor: '_Tuple3', _0: 'Weibo', _1: 'fa fa-weibo fa-stack-1x fa-inverse', _2: 'http://weibo.com/meilab'},
-		_1: {
-			ctor: '::',
-			_0: {ctor: '_Tuple3', _0: 'Linkedin', _1: 'fa fa-linkedin fa-stack-1x fa-inverse', _2: 'https://linkedin.com/in/meilab'},
-			_1: {ctor: '[]'}
-		}
-	}
-};
 var _meilab$meilab$Routing$urlFor = F2(
 	function (base_url, route) {
 		var _p0 = route;
@@ -20152,7 +20139,7 @@ var _meilab$meilab$Views_SharedViews$hero = F2(
 							{
 								ctor: '::',
 								_0: _rtfeldman$elm_css$Css$fontSize(
-									_rtfeldman$elm_css$Css$rem(3.5)),
+									_rtfeldman$elm_css$Css$rem(2.5)),
 								_1: {ctor: '[]'}
 							}),
 						_1: {ctor: '[]'}
@@ -20172,7 +20159,7 @@ var _meilab$meilab$Views_SharedViews$hero = F2(
 								{
 									ctor: '::',
 									_0: _rtfeldman$elm_css$Css$fontSize(
-										_rtfeldman$elm_css$Css$rem(6)),
+										_rtfeldman$elm_css$Css$rem(3)),
 									_1: {ctor: '[]'}
 								}),
 							_1: {ctor: '[]'}
@@ -20263,7 +20250,7 @@ var _meilab$meilab$Views_SharedViews$renderFooter = A2(
 						_0: A2(
 							_rtfeldman$elm_css$Css$padding2,
 							_rtfeldman$elm_css$Css$em(3),
-							_rtfeldman$elm_css$Css$pct(10)),
+							_rtfeldman$elm_css$Css$zero),
 						_1: {
 							ctor: '::',
 							_0: _rtfeldman$elm_css$Css$textAlign(_rtfeldman$elm_css$Css$center),
@@ -21647,8 +21634,10 @@ var _meilab$meilab$Views_Home$renderKidsReviews = A2(
 							_0: _meilab$meilab$Views_SharedStyles$columnGrid,
 							_1: {
 								ctor: '::',
-								_0: _rtfeldman$elm_css$Css$padding(
-									_rtfeldman$elm_css$Css$px(20)),
+								_0: A2(
+									_rtfeldman$elm_css$Css$padding2,
+									_rtfeldman$elm_css$Css$px(30),
+									_rtfeldman$elm_css$Css$zero),
 								_1: {ctor: '[]'}
 							}
 						}
@@ -21667,7 +21656,7 @@ var _meilab$meilab$Views_Home$renderKidsReviews = A2(
 					{
 						ctor: '::',
 						_0: _rtfeldman$elm_css$Css$maxWidth(
-							_rtfeldman$elm_css$Css$px(768)),
+							_rtfeldman$elm_css$Css$px(1200)),
 						_1: {
 							ctor: '::',
 							_0: _rtfeldman$elm_css$Css$padding(
@@ -21856,8 +21845,10 @@ var _meilab$meilab$Views_Home$renderParentsReviews = A2(
 							_0: _meilab$meilab$Views_SharedStyles$columnGrid,
 							_1: {
 								ctor: '::',
-								_0: _rtfeldman$elm_css$Css$padding(
-									_rtfeldman$elm_css$Css$px(30)),
+								_0: A2(
+									_rtfeldman$elm_css$Css$padding2,
+									_rtfeldman$elm_css$Css$px(30),
+									_rtfeldman$elm_css$Css$zero),
 								_1: {ctor: '[]'}
 							}
 						}
@@ -21876,7 +21867,7 @@ var _meilab$meilab$Views_Home$renderParentsReviews = A2(
 					{
 						ctor: '::',
 						_0: _rtfeldman$elm_css$Css$maxWidth(
-							_rtfeldman$elm_css$Css$px(768)),
+							_rtfeldman$elm_css$Css$px(1200)),
 						_1: {
 							ctor: '::',
 							_0: _rtfeldman$elm_css$Css$padding(
@@ -22456,7 +22447,7 @@ var _meilab$meilab$Update$update = F2(
 var _meilab$meilab$Main$subscriptions = function (model) {
 	return A2(
 		_elm_lang$core$Time$every,
-		_elm_lang$core$Time$second * 5,
+		_elm_lang$core$Time$second * 3,
 		_elm_lang$core$Basics$always(_meilab$meilab$Messages$UpdateSliderIdx));
 };
 var _meilab$meilab$Main$ghProjectName = 'johnny-art';

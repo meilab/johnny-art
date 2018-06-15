@@ -63,12 +63,12 @@ renderParentsReviews =
             , backgroundColor (hex "#0a57a3")
             , backgroundImage (linearGradient (stop <| rgba 0 0 0 0) (stop <| rgba 0 0 0 0.5) [])
             , columnGrid
-            , padding (px 30)
+            , padding2 (px 30) zero
             ]
         ]
         [ div
             [ css
-                [ maxWidth (px 768)
+                [ maxWidth (px 1200)
                 , padding (px 10)
                 ]
             ]
@@ -120,12 +120,12 @@ renderKidsReviews =
             , backgroundColor (hex "#296")
             , backgroundImage (linearGradient (stop <| rgba 0 0 0 0) (stop <| rgba 0 0 0 0.5) [])
             , columnGrid
-            , padding (px 20)
+            , padding2 (px 30) zero
             ]
         ]
         [ div
             [ css
-                [ maxWidth (px 768)
+                [ maxWidth (px 1200)
                 , padding (px 10)
                 ]
             ]

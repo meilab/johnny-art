@@ -9,7 +9,6 @@ import Html.Styled.Attributes exposing (css, href, src)
 import Html.Attributes
 import Types exposing (Content, Hero)
 import ViewHelpers exposing (formatDate, normalLinkItem, footerLinkItem, navigationOnClick)
-import Routing exposing (footerRoutingItem)
 import RemoteData exposing (WebData, RemoteData(..))
 import Markdown
 import Views.SharedStyles exposing (..)
@@ -21,7 +20,7 @@ renderFooter =
         [ css
             [ backgroundColor (hex "#134374")
             , color gray
-            , padding2 (Css.em 3) (pct 10)
+            , padding2 (Css.em 3) zero
             , textAlign center
             , flex3 (int 0) (int 0) (px 40)
             , displayFlex
@@ -31,14 +30,7 @@ renderFooter =
             , width (pct 100)
             ]
         ]
-        [ {-
-               ul [ css [ listedMenu ] ]
-                 (footerRoutingItem
-                     |> List.map footerLinkItem
-                 )
-             ,
-          -}
-          p
+        [ p
             [ css
                 [ flex (int 1)
                 , displayFlex
@@ -125,8 +117,8 @@ hero heroInfo heroClass =
                 ]
             ]
         ]
-        [ h3 [ css [ fontSize (Css.rem 3.5) ] ] [ text heroInfo.des ]
-        , h1 [ css [ fontSize (Css.rem 6) ] ] [ text heroInfo.title ]
+        [ h3 [ css [ fontSize (Css.rem 2.5) ] ] [ text heroInfo.des ]
+        , h1 [ css [ fontSize (Css.rem 3) ] ] [ text heroInfo.title ]
 
         {-
            , input
