@@ -1,0 +1,23 @@
+{
+  "name": "johnny-art",
+  "version": "1.0.0",
+  "description": "Johnny art center webpage",
+  "main": "elm.js",
+  "scripts": {
+    "compile": "elm-make src/Main.elm --output elm.js",
+    "watch": "elm-live src/Main.elm --output elm.js --pushstate --debug"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/meilab/johnny-art"
+  },
+  "keywords": [
+    "Elm",
+    "Broadcasting",
+    "Hosting",
+    "Training"
+  ],
+  "author": "meilab",
+  "license": "MIT"
+}
+
