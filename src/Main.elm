@@ -55,4 +55,4 @@ init location =
 
 subscriptions : Model -> Sub Msg
 subscriptions model =
-    Time.every (Time.second * 3) (always UpdateSliderIdx)
+    Time.every (Time.second * 6) (always UpdateSliderIdx)

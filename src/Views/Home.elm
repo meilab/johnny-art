@@ -9,7 +9,6 @@ import Css.Media exposing (minWidth, screen, withMediaQuery)
 import Html.Styled exposing (..)
 import Html.Styled.Attributes exposing (css, class, href, src)
 import Html.Styled.Events exposing (onClick, onInput)
-import Html.Attributes
 import Reviews exposing (parentsReview, kidsReview)
 import Courses exposing (courses)
 import Features exposing (features)
@@ -19,6 +18,7 @@ import Views.SharedStyles exposing (..)
 import Types exposing (Hero, Course, Feature, Teacher, ParentReview, KidReview)
 import Array exposing (get)
 import Config exposing (heroInfoInit)
+import Teachers exposing (teachers, consultants)
 
 
 homeView : Model -> Html Msg
@@ -49,6 +49,17 @@ homeView model =
             , renderFeatures model
             , renderParentsReviews
             , renderKidsReviews
+            , renderMembers model.url.base_url
+                "教师团队"
+                teachers
+                (backgroundColor (rgba 255 255 255 0.7))
+                (color (hex "#3e3e3e"))
+            , renderMembers
+                model.url.base_url
+                "顾问团队"
+                consultants
+                (backgroundColor (hex "#303030"))
+                (color white)
             , renderCta model.url.base_url
 
             --, content model
@@ -102,7 +113,7 @@ renderParentReviewItem reviewer =
         [ div
             [ css [ reviewMetaCss ] ]
             [ img [ src reviewer.avatar, css [ avatarImgCss ] ] []
-            , div [ css [ columnGrid ] ]
+            , div [ css [ columnGrid, flex (int 1) ] ]
                 [ text reviewer.name
                 , text ":"
                 , text (reviewer.kidName ++ "的" ++ reviewer.role)
@@ -282,7 +293,7 @@ renderFeatureItem base_url feature =
                 [ columnGrid
                 , height (pct 100)
                 , flex (pct 90)
-                , borderRadius (px 5)
+                , borderRadius (px 10)
                 , margin2 (px 20) zero
                 , withMediaQuery [ "screen and (min-width: 48em)" ]
                     [ flex3 (int 0) (int 0) (pct 48)
@@ -313,8 +324,7 @@ renderFeatureItem base_url feature =
                         , columnGrid
                         , justifyContent flexStart
                         , alignItems center
-
-                        --, marginTop (px 10)
+                        , marginTop (px 20)
                         ]
                     ]
                     [ img [ src feature.icon, css [ iconCss ] ] [] ]
@@ -391,25 +401,35 @@ renderCourseItem base_url course =
                     ]
                     []
                 ]
-            , renderTeachers base_url course.teachers
+
+            --, renderTeachers base_url course.teachers
             ]
 
 
-renderTeachers : String -> List Teacher -> Html Msg
-renderTeachers base_url teachers =
-    div
-        [ css
-            [ columnGrid
-            , justifyContent flexStart
+renderMembers : String -> String -> List Teacher -> Style -> Style -> Html Msg
+renderMembers base_url info members bgCss colorCss =
+    div [ css [ columnGrid, width (pct 100), bgCss ] ]
+        [ div
+            [ css
+                [ maxWidth (pct 80)
+                , columnGrid
+                , alignItems flexStart
+                , padding2 (px 20) zero
+                , colorCss
+                ]
+            ]
+            [ div [ css [ fontSize (Css.em 2.25), marginBottom (px 20) ] ]
+                [ text info ]
+            , div [ css [ rowGrid, justifyContent flexStart ] ]
+                (members
+                    |> List.map (renderTeacher base_url colorCss)
+                )
             ]
         ]
-        (teachers
-            |> List.map (renderTeacher base_url)
-        )
 
 
-renderTeacher : String -> Teacher -> Html Msg
-renderTeacher base_url teacher =
+renderTeacher : String -> Style -> Teacher -> Html Msg
+renderTeacher base_url colorCss teacher =
     let
         slug =
             teacher.slug
@@ -421,17 +441,26 @@ renderTeacher base_url teacher =
             [ href slug
             , navigationOnClick (onClickCmd)
             , css
-                [ rowGrid
+                [ gridItem
                 , justifyContent flexStart
+                , textDecoration none
+                , colorCss
                 ]
             ]
             [ img
                 [ src teacher.avatar
-                , css [ avatarImgCss ]
+                , css [ avatarImgCss, width (Css.em 8), height (Css.em 8) ]
                 ]
                 []
-            , p [ css [] ] [ text teacher.name ]
+            , p [ css [ fontSize (Css.em 1.25), fontWeight (int 700) ] ] [ text teacher.name ]
+            , div [ css [ columnGrid ] ] (teacher.tags |> List.map renderTeacherTags)
             ]
+
+
+renderTeacherTags : String -> Html Msg
+renderTeacherTags tag =
+    div [ css [ paddingTop (px 10) ] ]
+        [ text tag ]
 
 
 

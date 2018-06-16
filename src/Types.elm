@@ -69,6 +69,7 @@ type alias Teacher =
     , slug : String
     , bio : String
     , blog : String
+    , tags : List String
     }
 
 

@@ -7,6 +7,7 @@ import Css.Media exposing (minWidth, screen, withMediaQuery)
 import Html.Styled exposing (..)
 import Html.Styled.Attributes exposing (css, href, src)
 import Html.Attributes
+import Css.Transitions exposing (easeInOut, transition)
 import Types exposing (Content, Hero)
 import ViewHelpers exposing (formatDate, normalLinkItem, footerLinkItem, navigationOnClick)
 import RemoteData exposing (WebData, RemoteData(..))
@@ -93,39 +94,63 @@ hero : Hero -> Attribute Msg -> Html Msg
 hero heroInfo heroClass =
     div
         [ css
-            [ color white
-
-            --, backgroundImage (url heroInfo.srcUrl)
-            --, backgroundImage (linearGradient (stop2 (hex "#bb4242") <| pct 0) (stop2 (hex "#efab4a") <| pct 100) [])
-            , property "background-image" ("url(" ++ heroInfo.srcUrl ++ "), linear-gradient(to left, #bb4242 0%, #efab4a 100%), -webkit-linear-gradient(right, #bb4242 0%, #efab4a 100%)")
-            , height (vh 100)
+            [ backgroundImage (linearGradient (stop2 (hex "#bb4242") <| pct 0) (stop2 (hex "#efab4a") <| pct 100) [])
             , width (pct 100)
-            , backgroundColor (hex "#222")
-
-            --, backgroundAttachment fixed
-            , backgroundRepeat noRepeat
-            , backgroundSize cover
-            , displayFlex
-            , flexDirection column
-            , justifyContent center
-            , alignItems center
-            , textAlign center
-            , withMediaQuery [ "screen and (min-width: 48em)" ]
-                [ height (vh 60)
-                , minHeight (px 240)
-                , padding2 (pct 15) zero
-                ]
             ]
         ]
-        [ h3 [ css [ fontSize (Css.rem 2.5) ] ] [ text heroInfo.des ]
-        , h1 [ css [ fontSize (Css.rem 3) ] ] [ text heroInfo.title ]
+        [ div
+            [ css
+                [ color white
+                , backgroundImage (url heroInfo.srcUrl)
 
-        {-
-           , input
-               [ placeholder "搜索课程和音视频资源"
-               , onInput UpdateTitleFilter
-               , class [ Searcher ]
-               ]
-               []
-        -}
+                --, property "background-image" ("url(" ++ heroInfo.srcUrl ++ "), linear-gradient(to left, #bb4242 0%, #efab4a 100%), -webkit-linear-gradient(right, #bb4242 0%, #efab4a 100%)")
+                , height (vh 100)
+                , width (pct 100)
+                , backgroundColor (hex "#222")
+
+                --, backgroundAttachment fixed
+                , backgroundRepeat noRepeat
+                , backgroundSize cover
+                , displayFlex
+                , flexDirection column
+                , justifyContent center
+                , alignItems center
+                , textAlign center
+                , transition
+                    [ Css.Transitions.background3 1500 1500 Css.Transitions.linear ]
+                , withMediaQuery [ "screen and (min-width: 48em)" ]
+                    [ height (vh 60)
+                    , minHeight (px 240)
+                    , padding2 (pct 15) zero
+                    ]
+                ]
+            ]
+            [ h3
+                [ css
+                    [ fontSize (Css.rem 1.25)
+                    , transform (scale 2)
+                    , transition
+                        [ Css.Transitions.transform3 1500 1500 Css.Transitions.easeInOut ]
+                    ]
+                ]
+                [ text heroInfo.des ]
+            , h1
+                [ css
+                    [ fontSize (Css.rem 2)
+                    , transforms [ (scale 2) ]
+                    , transition
+                        [ Css.Transitions.transform3 1500 1500 Css.Transitions.easeInOut ]
+                    ]
+                ]
+                [ text heroInfo.title ]
+
+            {-
+               , input
+                   [ placeholder "搜索课程和音视频资源"
+                   , onInput UpdateTitleFilter
+                   , class [ Searcher ]
+                   ]
+                   []
+            -}
+            ]
         ]

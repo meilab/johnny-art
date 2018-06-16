@@ -74,7 +74,6 @@ rowGrid =
         [ displayFlex
         , flexWrap wrap
         , justifyContent center
-        , alignItems center
         ]
 
 
@@ -87,13 +86,32 @@ reviewMetaCss =
         ]
 
 
+reviewItemCss : Style
+reviewItemCss =
+    Css.batch
+        [ rowGrid
+        , flex (pct 90)
+        , backgroundColor (rgba 255 255 255 0.8)
+        , color (hex "#3e3e3e")
+        , borderRadius (px 5)
+        , padding (pct 2)
+        , marginTop (px 10)
+        , withMediaQuery [ "screen and (min-width: 48em)" ]
+            [ flex3 (int 0) (int 0) (pct 28)
+            ]
+        ]
+
+
 gridItem : Style
 gridItem =
     Css.batch
         [ columnGrid
         , flex (pct 90)
+        , borderRadius (px 5)
+        , padding (pct 2)
+        , marginTop (px 10)
         , withMediaQuery [ "screen and (min-width: 48em)" ]
-            [ flex3 (int 1) (int 0) (pct 30)
+            [ flex3 (int 1) (int 0) (pct 28)
             ]
         ]
 
@@ -110,7 +128,12 @@ avatarContainerCss =
 
 avatarImgCss : Style
 avatarImgCss =
-    borderRadius (pct 50)
+    Css.batch
+        [ borderRadius (pct 50)
+        , maxWidth (pct 100)
+        , width (Css.rem 3)
+        , height (Css.rem 3)
+        ]
 
 
 bigTitle : Style
@@ -130,24 +153,6 @@ linkFont =
         , fontStyle italic
         , color (hex "#a3a3a3")
         , hover [ color (hex "#0085a1") ]
-        ]
-
-
-reviewItemCss : Style
-reviewItemCss =
-    Css.batch
-        [ rowGrid
-        , flex (pct 90)
-        , backgroundColor (rgba 255 255 255 0.8)
-        , color (hex "#3e3e3e")
-        , borderRadius (px 5)
-        , padding (pct 2)
-        , marginTop (px 10)
-        , withMediaQuery [ "screen and (min-width: 48em)" ]
-            [ flex3 (int 0) (int 0) (pct 28)
-
-            --, marginLeft (px 20)
-            ]
         ]
 
 
