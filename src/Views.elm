@@ -17,6 +17,7 @@ import Views.Home exposing (homeView)
 import Views.About exposing (aboutView)
 import Views.Join exposing (joiningView)
 import Views.Page exposing (pageView)
+import Views.TeacherDetail exposing (teacherDetailView)
 import Views.SharedViews exposing (hero)
 
 
@@ -39,6 +40,9 @@ view model =
 
                 JoinRoute ->
                     joiningView
+
+                TeacherDetailRoute slug ->
+                    teacherDetailView model
 
                 _ ->
                     pageView model

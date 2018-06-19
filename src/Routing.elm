@@ -38,12 +38,12 @@ matchers base_url =
         [ map HomeRoute (parseBaseUrl base_url top)
         , map AboutRoute (parseBaseUrl base_url (s "about"))
         , map JoinRoute (parseBaseUrl base_url (s "join"))
-        , map CoursesRoute (parseBaseUrl base_url (s "courses"))
-        , map TeachersRoute (parseBaseUrl base_url (s "teachers"))
-        , map PostDetailRoute (parseBaseUrl base_url top </> string)
-        , map TeacherDetailRoute (parseBaseUrl base_url top </> string)
-        , map CourseDetailRoute (parseBaseUrl base_url top </> string)
-        , map FeatureDetailRoute (parseBaseUrl base_url top </> string)
+        , map CoursesRoute (parseBaseUrl base_url (s "courselist"))
+        , map TeachersRoute (parseBaseUrl base_url (s "teacherlist"))
+        , map PostDetailRoute (parseBaseUrl base_url (s "post") </> string)
+        , map TeacherDetailRoute (parseBaseUrl base_url (s "teacher") </> string)
+        , map CourseDetailRoute (parseBaseUrl base_url (s "course") </> string)
+        , map FeatureDetailRoute (parseBaseUrl base_url (s "feature") </> string)
         ]
 
 

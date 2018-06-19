@@ -90,12 +90,13 @@ convertMarkdownToHtml markdown =
             text "Loading"
 
 
-hero : Hero -> Attribute Msg -> Html Msg
-hero heroInfo heroClass =
+hero : Hero -> Style -> Html Msg
+hero heroInfo heightCss =
     div
         [ css
             [ backgroundImage (linearGradient (stop2 (hex "#bb4242") <| pct 0) (stop2 (hex "#efab4a") <| pct 100) [])
             , width (pct 100)
+            , heightCss
             ]
         ]
         [ div
@@ -111,6 +112,10 @@ hero heroInfo heroClass =
                 --, backgroundAttachment fixed
                 , backgroundRepeat noRepeat
                 , backgroundSize cover
+
+                --, backgroundSize contain
+                , backgroundAttachment local
+                , backgroundPosition center
                 , displayFlex
                 , flexDirection column
                 , justifyContent center
@@ -118,10 +123,12 @@ hero heroInfo heroClass =
                 , textAlign center
                 , transition
                     [ Css.Transitions.background3 1500 1500 Css.Transitions.linear ]
-                , withMediaQuery [ "screen and (min-width: 48em)" ]
+                , heightCss
+                , withMediaQuery [ "screen and (max-width: 48em)" ]
                     [ height (vh 60)
                     , minHeight (px 240)
-                    , padding2 (pct 15) zero
+
+                    --, padding2 (pct 15) zero
                     ]
                 ]
             ]

@@ -7,17 +7,29 @@ import Css exposing (..)
 import Html.Styled exposing (..)
 import Html.Styled.Attributes exposing (css, href, src)
 import Html.Styled.Events exposing (onClick)
-import Types exposing (Author)
-import ViewHelpers exposing (formatDate, externalLink)
 import Views.SharedViews exposing (..)
 import Views.SharedStyles exposing (..)
 
 
 aboutView : Model -> Html Msg
 aboutView model =
-    div
-        [ css [ contentContainerCss ]
-        ]
-        [ renderMarkdown
-            model.currentContent.markdown
+    let
+        heroCss =
+            height (vh 60)
+    in
+        div [ css [ width (pct 100) ] ]
+            [ hero
+                model.currentContent.hero
+                heroCss
+            , content model
+            ]
+
+
+content : Model -> Html Msg
+content model =
+    div [ css [ contentContainerCss ] ]
+        [ h1 [ css [] ] [ text model.currentContent.title ]
+
+        --, renderPageMeta model.currentContent
+        , renderMarkdown model.currentContent.markdown
         ]

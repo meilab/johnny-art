@@ -1,4 +1,4 @@
-module Pages exposing (..)
+module Contents exposing (..)
 
 import Authors
 import Date.Extra exposing (fromCalendarDate)
@@ -14,7 +14,7 @@ home =
     , route = HomeRoute
     , contentType = Page
     , name = "index"
-    , title = "Elm Recipes"
+    , title = "Johnny-Art"
     , publishedDate = fromCalendarDate 2018 Jun 15
     , author = Authors.wy
     , markdown = RemoteData.NotAsked
@@ -34,7 +34,7 @@ about =
     , author = Authors.wy
     , markdown = RemoteData.NotAsked
     , preview = ""
-    , hero = Hero "images/cover1.jpg" "" ""
+    , hero = Hero "images/aboutHero.jpg" "" ""
     }
 
 
@@ -68,12 +68,12 @@ courses =
     }
 
 
-teachers : Content
-teachers =
-    { slug = "teachers"
+teacherList : Content
+teacherList =
+    { slug = "teacherlist"
     , route = TeachersRoute
     , contentType = AuthorPage
-    , name = "teachers"
+    , name = "teacherlist"
     , title = "Teachers"
     , publishedDate = fromCalendarDate 2018 Jun 15
     , author = Authors.wy
@@ -119,7 +119,49 @@ pages =
     , about
     , join
     , courses
-    , teachers
+    , teacherList
     , notFoundContent
     , notFound404
+    ]
+
+
+helloWorld : Content
+helloWorld =
+    { slug = "/hello-world"
+    , route = PostDetailRoute "hello-world"
+    , title = "Hello World"
+    , name = "hello-world"
+    , publishedDate = fromCalendarDate 2017 Sep 25
+    , author = Authors.wy
+    , markdown = RemoteData.NotAsked
+    , contentType = Post
+    , preview = "Hello World in Elm"
+    , hero = Hero "images/cover1.jpg" "" ""
+    }
+
+
+posts : List Content
+posts =
+    [ helloWorld
+    ]
+
+
+ww : Content
+ww =
+    { slug = "teacher/ww"
+    , route = TeacherDetailRoute "ww"
+    , contentType = Page
+    , name = "ww"
+    , title = "Wu Wei"
+    , publishedDate = fromCalendarDate 2018 Jun 15
+    , author = Authors.wy
+    , markdown = RemoteData.NotAsked
+    , preview = ""
+    , hero = Hero "/images/wwHero.jpg" "" ""
+    }
+
+
+teachers : List Content
+teachers =
+    [ ww
     ]

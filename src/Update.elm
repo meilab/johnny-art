@@ -15,14 +15,11 @@ import Array exposing (Array)
 changeUrlCommand : Model -> Route -> Content -> Cmd Msg
 changeUrlCommand model route content =
     case route of
-        TeachersRoute ->
-            Cmd.none
-
-        CoursesRoute ->
-            Cmd.none
+        AboutRoute ->
+            FetchContent.fetch content model.url.base_url
 
         _ ->
-            FetchContent.fetch content model.url.base_url
+            Cmd.none
 
 
 changeUrlProcedure : Model -> Route -> ( Model, Cmd Msg )

@@ -31,6 +31,9 @@ homeView model =
 
                 Nothing ->
                     Hero "" "" ""
+
+        heroCss =
+            Css.batch []
     in
         div
             [ css
@@ -42,7 +45,7 @@ homeView model =
             ]
             [ hero
                 heroInfo
-                (css [])
+                heroCss
 
             --, renderTopQuote
             --, renderCourses model

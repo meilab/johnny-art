@@ -16,12 +16,16 @@ import Views.SharedStyles exposing (..)
 
 pageView : Model -> Html Msg
 pageView model =
-    div []
-        [ hero
-            model.currentContent.hero
-            (css [])
-        , content model
-        ]
+    let
+        heroCss =
+            height (vh 60)
+    in
+        div []
+            [ hero
+                model.currentContent.hero
+                heroCss
+            , content model
+            ]
 
 
 content : Model -> Html Msg

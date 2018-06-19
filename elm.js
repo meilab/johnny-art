@@ -12434,7 +12434,7 @@ var _meilab$meilab$Routing$matchers = function (base_url) {
 							A2(
 								_meilab$meilab$Routing$parseBaseUrl,
 								base_url,
-								_evancz$url_parser$UrlParser$s('courses'))),
+								_evancz$url_parser$UrlParser$s('courselist'))),
 						_1: {
 							ctor: '::',
 							_0: A2(
@@ -12443,7 +12443,7 @@ var _meilab$meilab$Routing$matchers = function (base_url) {
 								A2(
 									_meilab$meilab$Routing$parseBaseUrl,
 									base_url,
-									_evancz$url_parser$UrlParser$s('teachers'))),
+									_evancz$url_parser$UrlParser$s('teacherlist'))),
 							_1: {
 								ctor: '::',
 								_0: A2(
@@ -12451,7 +12451,10 @@ var _meilab$meilab$Routing$matchers = function (base_url) {
 									_meilab$meilab$Routing$PostDetailRoute,
 									A2(
 										_evancz$url_parser$UrlParser_ops['</>'],
-										A2(_meilab$meilab$Routing$parseBaseUrl, base_url, _evancz$url_parser$UrlParser$top),
+										A2(
+											_meilab$meilab$Routing$parseBaseUrl,
+											base_url,
+											_evancz$url_parser$UrlParser$s('post')),
 										_evancz$url_parser$UrlParser$string)),
 								_1: {
 									ctor: '::',
@@ -12460,7 +12463,10 @@ var _meilab$meilab$Routing$matchers = function (base_url) {
 										_meilab$meilab$Routing$TeacherDetailRoute,
 										A2(
 											_evancz$url_parser$UrlParser_ops['</>'],
-											A2(_meilab$meilab$Routing$parseBaseUrl, base_url, _evancz$url_parser$UrlParser$top),
+											A2(
+												_meilab$meilab$Routing$parseBaseUrl,
+												base_url,
+												_evancz$url_parser$UrlParser$s('teacher')),
 											_evancz$url_parser$UrlParser$string)),
 									_1: {
 										ctor: '::',
@@ -12469,7 +12475,10 @@ var _meilab$meilab$Routing$matchers = function (base_url) {
 											_meilab$meilab$Routing$CourseDetailRoute,
 											A2(
 												_evancz$url_parser$UrlParser_ops['</>'],
-												A2(_meilab$meilab$Routing$parseBaseUrl, base_url, _evancz$url_parser$UrlParser$top),
+												A2(
+													_meilab$meilab$Routing$parseBaseUrl,
+													base_url,
+													_evancz$url_parser$UrlParser$s('course')),
 												_evancz$url_parser$UrlParser$string)),
 										_1: {
 											ctor: '::',
@@ -12478,7 +12487,10 @@ var _meilab$meilab$Routing$matchers = function (base_url) {
 												_meilab$meilab$Routing$FeatureDetailRoute,
 												A2(
 													_evancz$url_parser$UrlParser_ops['</>'],
-													A2(_meilab$meilab$Routing$parseBaseUrl, base_url, _evancz$url_parser$UrlParser$top),
+													A2(
+														_meilab$meilab$Routing$parseBaseUrl,
+														base_url,
+														_evancz$url_parser$UrlParser$s('feature')),
 													_evancz$url_parser$UrlParser$string)),
 											_1: {ctor: '[]'}
 										}
@@ -12640,121 +12652,24 @@ var _meilab$meilab$Config$heroInfoInit = function () {
 var _meilab$meilab$Config$siteTime = '2018';
 var _meilab$meilab$Config$siteName = 'Johnny-Art';
 
-var _meilab$meilab$Pages$notFound404 = {
-	slug: '404',
-	route: _meilab$meilab$Routing$NotFoundRoute,
+var _meilab$meilab$Contents$ww = {
+	slug: 'teacher/ww',
+	route: _meilab$meilab$Routing$TeacherDetailRoute('ww'),
 	contentType: _meilab$meilab$Types$Page,
-	name: '404',
-	title: 'You Are lost',
+	name: 'ww',
+	title: 'Wu Wei',
 	publishedDate: A3(_justinmimbs$elm_date_extra$Date_Extra$fromCalendarDate, 2018, _elm_lang$core$Date$Jun, 15),
 	author: _meilab$meilab$Authors$wy,
 	markdown: _krisajenkins$remotedata$RemoteData$NotAsked,
 	preview: '',
-	hero: A3(_meilab$meilab$Types$Hero, 'images/cover1.jpg', '', '')
+	hero: A3(_meilab$meilab$Types$Hero, '/images/wwHero.jpg', '', '')
 };
-var _meilab$meilab$Pages$notFoundContent = {
-	slug: 'notfound',
-	route: _meilab$meilab$Routing$NotFoundRoute,
-	contentType: _meilab$meilab$Types$Page,
-	name: 'not-found',
-	title: 'Couldn\'t find content',
-	publishedDate: A3(_justinmimbs$elm_date_extra$Date_Extra$fromCalendarDate, 2018, _elm_lang$core$Date$Jun, 15),
-	author: _meilab$meilab$Authors$wy,
-	markdown: _krisajenkins$remotedata$RemoteData$NotAsked,
-	preview: '',
-	hero: A3(_meilab$meilab$Types$Hero, 'images/cover1.jpg', '', '')
-};
-var _meilab$meilab$Pages$teachers = {
-	slug: 'teachers',
-	route: _meilab$meilab$Routing$TeachersRoute,
-	contentType: _meilab$meilab$Types$AuthorPage,
-	name: 'teachers',
-	title: 'Teachers',
-	publishedDate: A3(_justinmimbs$elm_date_extra$Date_Extra$fromCalendarDate, 2018, _elm_lang$core$Date$Jun, 15),
-	author: _meilab$meilab$Authors$wy,
-	markdown: _krisajenkins$remotedata$RemoteData$NotAsked,
-	preview: '',
-	hero: A3(_meilab$meilab$Types$Hero, 'images/cover1.jpg', '', '')
-};
-var _meilab$meilab$Pages$courses = {
-	slug: 'courses',
-	route: _meilab$meilab$Routing$CoursesRoute,
-	contentType: _meilab$meilab$Types$Page,
-	name: 'courses',
-	title: 'Courses',
-	publishedDate: A3(_justinmimbs$elm_date_extra$Date_Extra$fromCalendarDate, 2018, _elm_lang$core$Date$Jun, 15),
-	author: _meilab$meilab$Authors$wy,
-	markdown: _krisajenkins$remotedata$RemoteData$NotAsked,
-	preview: '',
-	hero: A3(_meilab$meilab$Types$Hero, 'images/cover1.jpg', '', '')
-};
-var _meilab$meilab$Pages$join = {
-	slug: '/join',
-	route: _meilab$meilab$Routing$JoinRoute,
-	contentType: _meilab$meilab$Types$Page,
-	name: 'join',
-	title: 'Join',
-	publishedDate: A3(_justinmimbs$elm_date_extra$Date_Extra$fromCalendarDate, 2018, _elm_lang$core$Date$Jun, 15),
-	author: _meilab$meilab$Authors$wy,
-	markdown: _krisajenkins$remotedata$RemoteData$NotAsked,
-	preview: '',
-	hero: A3(_meilab$meilab$Types$Hero, 'images/cover1.jpg', '', '')
-};
-var _meilab$meilab$Pages$about = {
-	slug: '/about',
-	route: _meilab$meilab$Routing$AboutRoute,
-	contentType: _meilab$meilab$Types$Page,
-	name: 'about',
-	title: 'About Johnny art center',
-	publishedDate: A3(_justinmimbs$elm_date_extra$Date_Extra$fromCalendarDate, 2018, _elm_lang$core$Date$Jun, 15),
-	author: _meilab$meilab$Authors$wy,
-	markdown: _krisajenkins$remotedata$RemoteData$NotAsked,
-	preview: '',
-	hero: A3(_meilab$meilab$Types$Hero, 'images/cover1.jpg', '', '')
-};
-var _meilab$meilab$Pages$home = {
-	slug: '/',
-	route: _meilab$meilab$Routing$HomeRoute,
-	contentType: _meilab$meilab$Types$Page,
-	name: 'index',
-	title: 'Elm Recipes',
-	publishedDate: A3(_justinmimbs$elm_date_extra$Date_Extra$fromCalendarDate, 2018, _elm_lang$core$Date$Jun, 15),
-	author: _meilab$meilab$Authors$wy,
-	markdown: _krisajenkins$remotedata$RemoteData$NotAsked,
-	preview: '',
-	hero: A3(_meilab$meilab$Types$Hero, 'images/cover1.jpg', '', '')
-};
-var _meilab$meilab$Pages$pages = {
+var _meilab$meilab$Contents$teachers = {
 	ctor: '::',
-	_0: _meilab$meilab$Pages$home,
-	_1: {
-		ctor: '::',
-		_0: _meilab$meilab$Pages$about,
-		_1: {
-			ctor: '::',
-			_0: _meilab$meilab$Pages$join,
-			_1: {
-				ctor: '::',
-				_0: _meilab$meilab$Pages$courses,
-				_1: {
-					ctor: '::',
-					_0: _meilab$meilab$Pages$teachers,
-					_1: {
-						ctor: '::',
-						_0: _meilab$meilab$Pages$notFoundContent,
-						_1: {
-							ctor: '::',
-							_0: _meilab$meilab$Pages$notFound404,
-							_1: {ctor: '[]'}
-						}
-					}
-				}
-			}
-		}
-	}
+	_0: _meilab$meilab$Contents$ww,
+	_1: {ctor: '[]'}
 };
-
-var _meilab$meilab$Posts$helloWorld = {
+var _meilab$meilab$Contents$helloWorld = {
 	slug: '/hello-world',
 	route: _meilab$meilab$Routing$PostDetailRoute('hello-world'),
 	title: 'Hello World',
@@ -12766,10 +12681,123 @@ var _meilab$meilab$Posts$helloWorld = {
 	preview: 'Hello World in Elm',
 	hero: A3(_meilab$meilab$Types$Hero, 'images/cover1.jpg', '', '')
 };
-var _meilab$meilab$Posts$posts = {
+var _meilab$meilab$Contents$posts = {
 	ctor: '::',
-	_0: _meilab$meilab$Posts$helloWorld,
+	_0: _meilab$meilab$Contents$helloWorld,
 	_1: {ctor: '[]'}
+};
+var _meilab$meilab$Contents$notFound404 = {
+	slug: '404',
+	route: _meilab$meilab$Routing$NotFoundRoute,
+	contentType: _meilab$meilab$Types$Page,
+	name: '404',
+	title: 'You Are lost',
+	publishedDate: A3(_justinmimbs$elm_date_extra$Date_Extra$fromCalendarDate, 2018, _elm_lang$core$Date$Jun, 15),
+	author: _meilab$meilab$Authors$wy,
+	markdown: _krisajenkins$remotedata$RemoteData$NotAsked,
+	preview: '',
+	hero: A3(_meilab$meilab$Types$Hero, 'images/cover1.jpg', '', '')
+};
+var _meilab$meilab$Contents$notFoundContent = {
+	slug: 'notfound',
+	route: _meilab$meilab$Routing$NotFoundRoute,
+	contentType: _meilab$meilab$Types$Page,
+	name: 'not-found',
+	title: 'Couldn\'t find content',
+	publishedDate: A3(_justinmimbs$elm_date_extra$Date_Extra$fromCalendarDate, 2018, _elm_lang$core$Date$Jun, 15),
+	author: _meilab$meilab$Authors$wy,
+	markdown: _krisajenkins$remotedata$RemoteData$NotAsked,
+	preview: '',
+	hero: A3(_meilab$meilab$Types$Hero, 'images/cover1.jpg', '', '')
+};
+var _meilab$meilab$Contents$teacherList = {
+	slug: 'teacherlist',
+	route: _meilab$meilab$Routing$TeachersRoute,
+	contentType: _meilab$meilab$Types$AuthorPage,
+	name: 'teacherlist',
+	title: 'Teachers',
+	publishedDate: A3(_justinmimbs$elm_date_extra$Date_Extra$fromCalendarDate, 2018, _elm_lang$core$Date$Jun, 15),
+	author: _meilab$meilab$Authors$wy,
+	markdown: _krisajenkins$remotedata$RemoteData$NotAsked,
+	preview: '',
+	hero: A3(_meilab$meilab$Types$Hero, 'images/cover1.jpg', '', '')
+};
+var _meilab$meilab$Contents$courses = {
+	slug: 'courses',
+	route: _meilab$meilab$Routing$CoursesRoute,
+	contentType: _meilab$meilab$Types$Page,
+	name: 'courses',
+	title: 'Courses',
+	publishedDate: A3(_justinmimbs$elm_date_extra$Date_Extra$fromCalendarDate, 2018, _elm_lang$core$Date$Jun, 15),
+	author: _meilab$meilab$Authors$wy,
+	markdown: _krisajenkins$remotedata$RemoteData$NotAsked,
+	preview: '',
+	hero: A3(_meilab$meilab$Types$Hero, 'images/cover1.jpg', '', '')
+};
+var _meilab$meilab$Contents$join = {
+	slug: '/join',
+	route: _meilab$meilab$Routing$JoinRoute,
+	contentType: _meilab$meilab$Types$Page,
+	name: 'join',
+	title: 'Join',
+	publishedDate: A3(_justinmimbs$elm_date_extra$Date_Extra$fromCalendarDate, 2018, _elm_lang$core$Date$Jun, 15),
+	author: _meilab$meilab$Authors$wy,
+	markdown: _krisajenkins$remotedata$RemoteData$NotAsked,
+	preview: '',
+	hero: A3(_meilab$meilab$Types$Hero, 'images/cover1.jpg', '', '')
+};
+var _meilab$meilab$Contents$about = {
+	slug: '/about',
+	route: _meilab$meilab$Routing$AboutRoute,
+	contentType: _meilab$meilab$Types$Page,
+	name: 'about',
+	title: 'About Johnny art center',
+	publishedDate: A3(_justinmimbs$elm_date_extra$Date_Extra$fromCalendarDate, 2018, _elm_lang$core$Date$Jun, 15),
+	author: _meilab$meilab$Authors$wy,
+	markdown: _krisajenkins$remotedata$RemoteData$NotAsked,
+	preview: '',
+	hero: A3(_meilab$meilab$Types$Hero, 'images/aboutHero.jpg', '', '')
+};
+var _meilab$meilab$Contents$home = {
+	slug: '/',
+	route: _meilab$meilab$Routing$HomeRoute,
+	contentType: _meilab$meilab$Types$Page,
+	name: 'index',
+	title: 'Johnny-Art',
+	publishedDate: A3(_justinmimbs$elm_date_extra$Date_Extra$fromCalendarDate, 2018, _elm_lang$core$Date$Jun, 15),
+	author: _meilab$meilab$Authors$wy,
+	markdown: _krisajenkins$remotedata$RemoteData$NotAsked,
+	preview: '',
+	hero: A3(_meilab$meilab$Types$Hero, 'images/cover1.jpg', '', '')
+};
+var _meilab$meilab$Contents$pages = {
+	ctor: '::',
+	_0: _meilab$meilab$Contents$home,
+	_1: {
+		ctor: '::',
+		_0: _meilab$meilab$Contents$about,
+		_1: {
+			ctor: '::',
+			_0: _meilab$meilab$Contents$join,
+			_1: {
+				ctor: '::',
+				_0: _meilab$meilab$Contents$courses,
+				_1: {
+					ctor: '::',
+					_0: _meilab$meilab$Contents$teacherList,
+					_1: {
+						ctor: '::',
+						_0: _meilab$meilab$Contents$notFoundContent,
+						_1: {
+							ctor: '::',
+							_0: _meilab$meilab$Contents$notFound404,
+							_1: {ctor: '[]'}
+						}
+					}
+				}
+			}
+		}
+	}
 };
 
 var _meilab$meilab$ContentUtils$contentByDateComparison = F2(
@@ -12781,7 +12809,7 @@ var _meilab$meilab$ContentUtils$sortByDate = _elm_lang$core$List$sortWith(
 var _meilab$meilab$ContentUtils$latest = function (_p0) {
 	return A2(
 		_elm_lang$core$Maybe$withDefault,
-		_meilab$meilab$Pages$notFoundContent,
+		_meilab$meilab$Contents$notFoundContent,
 		_elm_lang$core$List$head(
 			_meilab$meilab$ContentUtils$sortByDate(_p0)));
 };
@@ -12834,13 +12862,16 @@ var _meilab$meilab$ContentUtils$findByRoute = F2(
 				},
 				contentList));
 	});
-var _meilab$meilab$ContentUtils$allContent = A2(_elm_lang$core$Basics_ops['++'], _meilab$meilab$Pages$pages, _meilab$meilab$Posts$posts);
+var _meilab$meilab$ContentUtils$allContent = A2(
+	_elm_lang$core$Basics_ops['++'],
+	_meilab$meilab$Contents$pages,
+	A2(_elm_lang$core$Basics_ops['++'], _meilab$meilab$Contents$posts, _meilab$meilab$Contents$teachers));
 
 var _meilab$meilab$Teachers$lky = {
 	name: '赖空译',
 	avatar: '/images/avatar/lky.jpg',
 	route: _meilab$meilab$Routing$TeacherDetailRoute('lky'),
-	slug: '/lky',
+	slug: '/teacher/lky',
 	email: 'example@aliyun.com',
 	bio: 'Coder',
 	blog: '',
@@ -12866,7 +12897,7 @@ var _meilab$meilab$Teachers$zy = {
 	name: '邹阳',
 	avatar: '/images/avatar/zy.jpg',
 	route: _meilab$meilab$Routing$TeacherDetailRoute('zy'),
-	slug: '/zy',
+	slug: '/teacher/zy',
 	email: 'example@aliyun.com',
 	bio: 'Coder',
 	blog: '',
@@ -12880,7 +12911,7 @@ var _meilab$meilab$Teachers$zj = {
 	name: '张静',
 	avatar: '/images/avatar/zj.jpg',
 	route: _meilab$meilab$Routing$TeacherDetailRoute('zj'),
-	slug: '/zj',
+	slug: '/teacher/zj',
 	email: 'example@aliyun.com',
 	bio: 'Coder',
 	blog: '',
@@ -12906,7 +12937,7 @@ var _meilab$meilab$Teachers$xw = {
 	name: '小雯',
 	avatar: '/images/avatar/yw.jpg',
 	route: _meilab$meilab$Routing$TeacherDetailRoute('xw'),
-	slug: '/xw',
+	slug: '/teacher/xw',
 	email: 'example@aliyun.com',
 	bio: 'Coder',
 	blog: '',
@@ -12932,7 +12963,7 @@ var _meilab$meilab$Teachers$yxz = {
 	name: '叶小舟',
 	avatar: '/images/avatar/yxz.jpg',
 	route: _meilab$meilab$Routing$TeacherDetailRoute('yxz'),
-	slug: '/yxz',
+	slug: '/teacher/yxz',
 	email: 'example@aliyun.com',
 	bio: 'Coder',
 	blog: '',
@@ -12974,7 +13005,7 @@ var _meilab$meilab$Teachers$zz = {
 	name: '周政',
 	avatar: '/images/avatar/zz.jpg',
 	route: _meilab$meilab$Routing$TeacherDetailRoute('zz'),
-	slug: '/zz',
+	slug: '/teacher/zz',
 	email: 'example@aliyun.com',
 	bio: 'Coder',
 	blog: '',
@@ -13004,7 +13035,7 @@ var _meilab$meilab$Teachers$lj = {
 	name: '凌江',
 	avatar: '/images/avatar/lj.jpg',
 	route: _meilab$meilab$Routing$TeacherDetailRoute('lj'),
-	slug: '/lj',
+	slug: '/teacher/lj',
 	email: 'example@aliyun.com',
 	bio: 'Coder',
 	blog: '',
@@ -13043,7 +13074,7 @@ var _meilab$meilab$Teachers$cyh = {
 	name: '晓昊',
 	avatar: '/images/avatar/cyh.jpg',
 	route: _meilab$meilab$Routing$TeacherDetailRoute('cyh'),
-	slug: '/cyh',
+	slug: '/teacher/cyh',
 	email: 'example@aliyun.com',
 	bio: 'Coder',
 	blog: '',
@@ -13065,7 +13096,7 @@ var _meilab$meilab$Teachers$ww = {
 	name: '吴老师',
 	avatar: '/images/avatar/ww.jpg',
 	route: _meilab$meilab$Routing$TeacherDetailRoute('ww'),
-	slug: '/ww',
+	slug: '/teacher/ww',
 	email: 'example@aliyun.com',
 	bio: 'Coder',
 	blog: '',
@@ -19302,7 +19333,7 @@ var _meilab$meilab$Models$initialModel = F2(
 			route: route,
 			url: url,
 			ui: _meilab$meilab$Models$Ui(1),
-			currentContent: _meilab$meilab$Pages$home
+			currentContent: _meilab$meilab$Contents$home
 		};
 	});
 var _meilab$meilab$Models$Model = F4(
@@ -21040,7 +21071,7 @@ var _rtfeldman$elm_css$Css_Transitions$background2 = _rtfeldman$elm_css$Css_Tran
 var _rtfeldman$elm_css$Css_Transitions$background = _rtfeldman$elm_css$Css_Transitions$durationTransition(_rtfeldman$elm_css$Css_Transitions$Background);
 
 var _meilab$meilab$Views_SharedViews$hero = F2(
-	function (heroInfo, heroClass) {
+	function (heroInfo, heightCss) {
 		return A2(
 			_rtfeldman$elm_css$Html_Styled$div,
 			{
@@ -21064,7 +21095,11 @@ var _meilab$meilab$Views_SharedViews$hero = F2(
 							ctor: '::',
 							_0: _rtfeldman$elm_css$Css$width(
 								_rtfeldman$elm_css$Css$pct(100)),
-							_1: {ctor: '[]'}
+							_1: {
+								ctor: '::',
+								_0: heightCss,
+								_1: {ctor: '[]'}
+							}
 						}
 					}),
 				_1: {ctor: '[]'}
@@ -21103,55 +21138,60 @@ var _meilab$meilab$Views_SharedViews$hero = F2(
 														_0: _rtfeldman$elm_css$Css$backgroundSize(_rtfeldman$elm_css$Css$cover),
 														_1: {
 															ctor: '::',
-															_0: _rtfeldman$elm_css$Css$displayFlex,
+															_0: _rtfeldman$elm_css$Css$backgroundAttachment(_rtfeldman$elm_css$Css$local),
 															_1: {
 																ctor: '::',
-																_0: _rtfeldman$elm_css$Css$flexDirection(_rtfeldman$elm_css$Css$column),
+																_0: _rtfeldman$elm_css$Css$backgroundPosition(_rtfeldman$elm_css$Css$center),
 																_1: {
 																	ctor: '::',
-																	_0: _rtfeldman$elm_css$Css$justifyContent(_rtfeldman$elm_css$Css$center),
+																	_0: _rtfeldman$elm_css$Css$displayFlex,
 																	_1: {
 																		ctor: '::',
-																		_0: _rtfeldman$elm_css$Css$alignItems(_rtfeldman$elm_css$Css$center),
+																		_0: _rtfeldman$elm_css$Css$flexDirection(_rtfeldman$elm_css$Css$column),
 																		_1: {
 																			ctor: '::',
-																			_0: _rtfeldman$elm_css$Css$textAlign(_rtfeldman$elm_css$Css$center),
+																			_0: _rtfeldman$elm_css$Css$justifyContent(_rtfeldman$elm_css$Css$center),
 																			_1: {
 																				ctor: '::',
-																				_0: _rtfeldman$elm_css$Css_Transitions$transition(
-																					{
-																						ctor: '::',
-																						_0: A3(_rtfeldman$elm_css$Css_Transitions$background3, 1500, 1500, _rtfeldman$elm_css$Css_Transitions$linear),
-																						_1: {ctor: '[]'}
-																					}),
+																				_0: _rtfeldman$elm_css$Css$alignItems(_rtfeldman$elm_css$Css$center),
 																				_1: {
 																					ctor: '::',
-																					_0: A2(
-																						_rtfeldman$elm_css$Css_Media$withMediaQuery,
-																						{
+																					_0: _rtfeldman$elm_css$Css$textAlign(_rtfeldman$elm_css$Css$center),
+																					_1: {
+																						ctor: '::',
+																						_0: _rtfeldman$elm_css$Css_Transitions$transition(
+																							{
+																								ctor: '::',
+																								_0: A3(_rtfeldman$elm_css$Css_Transitions$background3, 1500, 1500, _rtfeldman$elm_css$Css_Transitions$linear),
+																								_1: {ctor: '[]'}
+																							}),
+																						_1: {
 																							ctor: '::',
-																							_0: 'screen and (min-width: 48em)',
-																							_1: {ctor: '[]'}
-																						},
-																						{
-																							ctor: '::',
-																							_0: _rtfeldman$elm_css$Css$height(
-																								_rtfeldman$elm_css$Css$vh(60)),
+																							_0: heightCss,
 																							_1: {
 																								ctor: '::',
-																								_0: _rtfeldman$elm_css$Css$minHeight(
-																									_rtfeldman$elm_css$Css$px(240)),
-																								_1: {
-																									ctor: '::',
-																									_0: A2(
-																										_rtfeldman$elm_css$Css$padding2,
-																										_rtfeldman$elm_css$Css$pct(15),
-																										_rtfeldman$elm_css$Css$zero),
-																									_1: {ctor: '[]'}
-																								}
+																								_0: A2(
+																									_rtfeldman$elm_css$Css_Media$withMediaQuery,
+																									{
+																										ctor: '::',
+																										_0: 'screen and (max-width: 48em)',
+																										_1: {ctor: '[]'}
+																									},
+																									{
+																										ctor: '::',
+																										_0: _rtfeldman$elm_css$Css$height(
+																											_rtfeldman$elm_css$Css$vh(60)),
+																										_1: {
+																											ctor: '::',
+																											_0: _rtfeldman$elm_css$Css$minHeight(
+																												_rtfeldman$elm_css$Css$px(240)),
+																											_1: {ctor: '[]'}
+																										}
+																									}),
+																								_1: {ctor: '[]'}
 																							}
-																						}),
-																					_1: {ctor: '[]'}
+																						}
+																					}
 																				}
 																			}
 																		}
@@ -23156,6 +23196,8 @@ var _meilab$meilab$Views_Home$renderParentsReviews = A2(
 		_1: {ctor: '[]'}
 	});
 var _meilab$meilab$Views_Home$homeView = function (model) {
+	var heroCss = _rtfeldman$elm_css$Css$batch(
+		{ctor: '[]'});
 	var heroInfo = function () {
 		var _p0 = A2(_elm_lang$core$Array$get, model.ui.sliderIdx, _meilab$meilab$Config$heroInfoInit);
 		if (_p0.ctor === 'Just') {
@@ -23191,11 +23233,7 @@ var _meilab$meilab$Views_Home$homeView = function (model) {
 		},
 		{
 			ctor: '::',
-			_0: A2(
-				_meilab$meilab$Views_SharedViews$hero,
-				heroInfo,
-				_rtfeldman$elm_css$Html_Styled_Attributes$css(
-					{ctor: '[]'})),
+			_0: A2(_meilab$meilab$Views_SharedViews$hero, heroInfo, heroCss),
 			_1: {
 				ctor: '::',
 				_0: _meilab$meilab$Views_Home$renderFeatures(model),
@@ -23239,7 +23277,7 @@ var _meilab$meilab$Views_Home$homeView = function (model) {
 		});
 };
 
-var _meilab$meilab$Views_About$aboutView = function (model) {
+var _meilab$meilab$Views_About$content = function (model) {
 	return A2(
 		_rtfeldman$elm_css$Html_Styled$div,
 		{
@@ -23254,8 +23292,50 @@ var _meilab$meilab$Views_About$aboutView = function (model) {
 		},
 		{
 			ctor: '::',
-			_0: _meilab$meilab$Views_SharedViews$renderMarkdown(model.currentContent.markdown),
+			_0: A2(
+				_rtfeldman$elm_css$Html_Styled$h1,
+				{
+					ctor: '::',
+					_0: _rtfeldman$elm_css$Html_Styled_Attributes$css(
+						{ctor: '[]'}),
+					_1: {ctor: '[]'}
+				},
+				{
+					ctor: '::',
+					_0: _rtfeldman$elm_css$Html_Styled$text(model.currentContent.title),
+					_1: {ctor: '[]'}
+				}),
+			_1: {
+				ctor: '::',
+				_0: _meilab$meilab$Views_SharedViews$renderMarkdown(model.currentContent.markdown),
+				_1: {ctor: '[]'}
+			}
+		});
+};
+var _meilab$meilab$Views_About$aboutView = function (model) {
+	var heroCss = _rtfeldman$elm_css$Css$height(
+		_rtfeldman$elm_css$Css$vh(60));
+	return A2(
+		_rtfeldman$elm_css$Html_Styled$div,
+		{
+			ctor: '::',
+			_0: _rtfeldman$elm_css$Html_Styled_Attributes$css(
+				{
+					ctor: '::',
+					_0: _rtfeldman$elm_css$Css$width(
+						_rtfeldman$elm_css$Css$pct(100)),
+					_1: {ctor: '[]'}
+				}),
 			_1: {ctor: '[]'}
+		},
+		{
+			ctor: '::',
+			_0: A2(_meilab$meilab$Views_SharedViews$hero, model.currentContent.hero, heroCss),
+			_1: {
+				ctor: '::',
+				_0: _meilab$meilab$Views_About$content(model),
+				_1: {ctor: '[]'}
+			}
 		});
 };
 
@@ -23489,19 +23569,89 @@ var _meilab$meilab$Views_Page$content = function (model) {
 		});
 };
 var _meilab$meilab$Views_Page$pageView = function (model) {
+	var heroCss = _rtfeldman$elm_css$Css$height(
+		_rtfeldman$elm_css$Css$vh(60));
 	return A2(
 		_rtfeldman$elm_css$Html_Styled$div,
 		{ctor: '[]'},
 		{
 			ctor: '::',
-			_0: A2(
-				_meilab$meilab$Views_SharedViews$hero,
-				model.currentContent.hero,
-				_rtfeldman$elm_css$Html_Styled_Attributes$css(
-					{ctor: '[]'})),
+			_0: A2(_meilab$meilab$Views_SharedViews$hero, model.currentContent.hero, heroCss),
 			_1: {
 				ctor: '::',
 				_0: _meilab$meilab$Views_Page$content(model),
+				_1: {ctor: '[]'}
+			}
+		});
+};
+
+var _meilab$meilab$Views_TeacherDetail$content = function (model) {
+	var teacher = A2(
+		_elm_lang$core$Maybe$withDefault,
+		_meilab$meilab$Teachers$ww,
+		_elm_lang$core$List$head(
+			A2(
+				_elm_lang$core$List$filter,
+				function (item) {
+					return _elm_lang$core$Native_Utils.eq(item.route, model.currentContent.route);
+				},
+				_meilab$meilab$Teachers$teachers)));
+	return A2(
+		_rtfeldman$elm_css$Html_Styled$div,
+		{
+			ctor: '::',
+			_0: _rtfeldman$elm_css$Html_Styled_Attributes$css(
+				{
+					ctor: '::',
+					_0: _meilab$meilab$Views_SharedStyles$contentContainerCss,
+					_1: {ctor: '[]'}
+				}),
+			_1: {ctor: '[]'}
+		},
+		{
+			ctor: '::',
+			_0: A2(
+				_rtfeldman$elm_css$Html_Styled$h1,
+				{
+					ctor: '::',
+					_0: _rtfeldman$elm_css$Html_Styled_Attributes$css(
+						{ctor: '[]'}),
+					_1: {ctor: '[]'}
+				},
+				{
+					ctor: '::',
+					_0: _rtfeldman$elm_css$Html_Styled$text(teacher.name),
+					_1: {ctor: '[]'}
+				}),
+			_1: {
+				ctor: '::',
+				_0: _meilab$meilab$Views_SharedViews$renderMarkdown(model.currentContent.markdown),
+				_1: {ctor: '[]'}
+			}
+		});
+};
+var _meilab$meilab$Views_TeacherDetail$teacherDetailView = function (model) {
+	var heroCss = _rtfeldman$elm_css$Css$height(
+		_rtfeldman$elm_css$Css$vh(100));
+	return A2(
+		_rtfeldman$elm_css$Html_Styled$div,
+		{
+			ctor: '::',
+			_0: _rtfeldman$elm_css$Html_Styled_Attributes$css(
+				{
+					ctor: '::',
+					_0: _rtfeldman$elm_css$Css$width(
+						_rtfeldman$elm_css$Css$pct(100)),
+					_1: {ctor: '[]'}
+				}),
+			_1: {ctor: '[]'}
+		},
+		{
+			ctor: '::',
+			_0: A2(_meilab$meilab$Views_SharedViews$hero, model.currentContent.hero, heroCss),
+			_1: {
+				ctor: '::',
+				_0: _meilab$meilab$Views_TeacherDetail$content(model),
 				_1: {ctor: '[]'}
 			}
 		});
@@ -23570,6 +23720,8 @@ var _meilab$meilab$Views$view = function (model) {
 				return _meilab$meilab$Views_Teachers$teachersView(model);
 			case 'JoinRoute':
 				return _meilab$meilab$Views_Join$joiningView;
+			case 'TeacherDetailRoute':
+				return _meilab$meilab$Views_TeacherDetail$teacherDetailView(model);
 			default:
 				return _meilab$meilab$Views_Page$pageView(model);
 		}
@@ -23618,13 +23770,10 @@ var _meilab$meilab$Update$getContentForRoute = _meilab$meilab$ContentUtils$findB
 var _meilab$meilab$Update$changeUrlCommand = F3(
 	function (model, route, content) {
 		var _p0 = route;
-		switch (_p0.ctor) {
-			case 'TeachersRoute':
-				return _elm_lang$core$Platform_Cmd$none;
-			case 'CoursesRoute':
-				return _elm_lang$core$Platform_Cmd$none;
-			default:
-				return A2(_meilab$meilab$FetchContent$fetch, content, model.url.base_url);
+		if (_p0.ctor === 'AboutRoute') {
+			return A2(_meilab$meilab$FetchContent$fetch, content, model.url.base_url);
+		} else {
+			return _elm_lang$core$Platform_Cmd$none;
 		}
 	});
 var _meilab$meilab$Update$changeUrlProcedure = F2(

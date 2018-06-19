@@ -2,8 +2,7 @@ module ContentUtils exposing (..)
 
 import Types exposing (Content, ContentType(..))
 import List
-import Pages
-import Posts
+import Contents exposing (pages, posts, teachers)
 import Date.Extra
 import String
 import Routing exposing (Route)
@@ -11,7 +10,7 @@ import Routing exposing (Route)
 
 allContent : List Content
 allContent =
-    Pages.pages ++ Posts.posts
+    pages ++ posts ++ teachers
 
 
 findByRoute : List Content -> Route -> Maybe Content
@@ -55,7 +54,7 @@ findPosts contentList =
 
 latest : List Content -> Content
 latest =
-    sortByDate >> List.head >> Maybe.withDefault Pages.notFoundContent
+    sortByDate >> List.head >> Maybe.withDefault Contents.notFoundContent
 
 
 sortByDate : List Content -> List Content
