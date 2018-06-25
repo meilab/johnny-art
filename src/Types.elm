@@ -64,6 +64,7 @@ type alias Content =
 type alias Teacher =
     { name : String
     , avatar : String
+    , introPic : String
     , email : String
     , route : Route
     , slug : String
@@ -78,11 +79,13 @@ type alias Course =
     , name : String
     , slug : String
     , route : Route
+    , videoUrl : String
     , teachers : List Teacher
     , markdown : WebData String
     , preview : String
     , hero : Hero
     , introPic : String
+    , poster : String
     }
 
 

@@ -425,14 +425,14 @@ renderMembers base_url info members bgCss colorCss =
                 [ text info ]
             , div [ css [ rowGrid, justifyContent flexStart ] ]
                 (members
-                    |> List.map (renderTeacher base_url colorCss)
+                    |> List.map (renderMember base_url colorCss)
                 )
             ]
         ]
 
 
-renderTeacher : String -> Style -> Teacher -> Html Msg
-renderTeacher base_url colorCss teacher =
+renderMember : String -> Style -> Teacher -> Html Msg
+renderMember base_url colorCss teacher =
     let
         slug =
             teacher.slug

@@ -19,7 +19,7 @@ home =
     , author = Authors.wy
     , markdown = RemoteData.NotAsked
     , preview = ""
-    , hero = Hero "images/cover1.jpg" "" ""
+    , hero = Hero "images/hero/cover1.jpg" "" ""
     }
 
 
@@ -34,7 +34,7 @@ about =
     , author = Authors.wy
     , markdown = RemoteData.NotAsked
     , preview = ""
-    , hero = Hero "images/aboutHero.jpg" "" ""
+    , hero = Hero "images/hero/about.jpg" "" ""
     }
 
 
@@ -49,22 +49,22 @@ join =
     , author = Authors.wy
     , markdown = RemoteData.NotAsked
     , preview = ""
-    , hero = Hero "images/cover1.jpg" "" ""
+    , hero = Hero "images/hero/cover1.jpg" "" ""
     }
 
 
-courses : Content
-courses =
-    { slug = "courses"
+courselist : Content
+courselist =
+    { slug = "courselist"
     , route = CoursesRoute
     , contentType = Page
-    , name = "courses"
+    , name = "courselist"
     , title = "Courses"
     , publishedDate = fromCalendarDate 2018 Jun 15
     , author = Authors.wy
     , markdown = RemoteData.NotAsked
     , preview = ""
-    , hero = Hero "images/cover1.jpg" "" ""
+    , hero = Hero "images/hero/courses.jpg" "" ""
     }
 
 
@@ -79,7 +79,7 @@ teacherList =
     , author = Authors.wy
     , markdown = RemoteData.NotAsked
     , preview = ""
-    , hero = Hero "images/cover1.jpg" "" ""
+    , hero = Hero "images/hero/teachers.jpg" "" ""
     }
 
 
@@ -94,7 +94,7 @@ notFoundContent =
     , author = Authors.wy
     , markdown = RemoteData.NotAsked
     , preview = ""
-    , hero = Hero "images/cover1.jpg" "" ""
+    , hero = Hero "images/hero/cover1.jpg" "" ""
     }
 
 
@@ -109,7 +109,7 @@ notFound404 =
     , author = Authors.wy
     , markdown = RemoteData.NotAsked
     , preview = ""
-    , hero = Hero "images/cover1.jpg" "" ""
+    , hero = Hero "images/hero/cover1.jpg" "" ""
     }
 
 
@@ -118,7 +118,7 @@ pages =
     [ home
     , about
     , join
-    , courses
+    , courselist
     , teacherList
     , notFoundContent
     , notFound404
@@ -136,7 +136,7 @@ helloWorld =
     , markdown = RemoteData.NotAsked
     , contentType = Post
     , preview = "Hello World in Elm"
-    , hero = Hero "images/cover1.jpg" "" ""
+    , hero = Hero "images/hero/cover1.jpg" "" ""
     }
 
 
@@ -157,11 +157,185 @@ ww =
     , author = Authors.wy
     , markdown = RemoteData.NotAsked
     , preview = ""
-    , hero = Hero "/images/wwHero.jpg" "" ""
+    , hero = Hero "/images/hero/ww.jpg" "" ""
+    }
+
+
+cyh : Content
+cyh =
+    { slug = "teacher/cyh"
+    , route = TeacherDetailRoute "cyh"
+    , contentType = Page
+    , name = "cyh"
+    , title = "Chen Yinghao"
+    , publishedDate = fromCalendarDate 2018 Jun 15
+    , author = Authors.wy
+    , markdown = RemoteData.NotAsked
+    , preview = ""
+    , hero = Hero "/images/hero/ww.jpg" "" ""
+    }
+
+
+xw : Content
+xw =
+    { slug = "teacher/xw"
+    , route = TeacherDetailRoute "xw"
+    , contentType = Page
+    , name = "xw"
+    , title = "Xiao Wen"
+    , publishedDate = fromCalendarDate 2018 Jun 15
+    , author = Authors.wy
+    , markdown = RemoteData.NotAsked
+    , preview = ""
+    , hero = Hero "/images/hero/ww.jpg" "" ""
+    }
+
+
+zj : Content
+zj =
+    { slug = "teacher/zj"
+    , route = TeacherDetailRoute "zj"
+    , contentType = Page
+    , name = "zj"
+    , title = "Zhang Jing"
+    , publishedDate = fromCalendarDate 2018 Jun 15
+    , author = Authors.wy
+    , markdown = RemoteData.NotAsked
+    , preview = ""
+    , hero = Hero "/images/hero/ww.jpg" "" ""
+    }
+
+
+zy : Content
+zy =
+    { slug = "teacher/zy"
+    , route = TeacherDetailRoute "zy"
+    , contentType = Page
+    , name = "zy"
+    , title = "Zou Yang"
+    , publishedDate = fromCalendarDate 2018 Jun 15
+    , author = Authors.wy
+    , markdown = RemoteData.NotAsked
+    , preview = ""
+    , hero = Hero "/images/hero/ww.jpg" "" ""
+    }
+
+
+lky : Content
+lky =
+    { slug = "teacher/lky"
+    , route = TeacherDetailRoute "lky"
+    , contentType = Page
+    , name = "lky"
+    , title = "Lai Kongyi"
+    , publishedDate = fromCalendarDate 2018 Jun 15
+    , author = Authors.wy
+    , markdown = RemoteData.NotAsked
+    , preview = ""
+    , hero = Hero "/images/hero/ww.jpg" "" ""
     }
 
 
 teachers : List Content
 teachers =
-    [ ww
-    ]
+    [ ww, cyh, xw, zj, zy, lky ]
+
+
+lj : Content
+lj =
+    { slug = "teacher/lj"
+    , route = TeacherDetailRoute "lj"
+    , contentType = Page
+    , name = "lj"
+    , title = "Ling Jiang"
+    , publishedDate = fromCalendarDate 2018 Jun 15
+    , author = Authors.wy
+    , markdown = RemoteData.NotAsked
+    , preview = ""
+    , hero = Hero "/images/hero/ww.jpg" "" ""
+    }
+
+
+zz : Content
+zz =
+    { slug = "teacher/zz"
+    , route = TeacherDetailRoute "zz"
+    , contentType = Page
+    , name = "zz"
+    , title = "Zhou Zheng"
+    , publishedDate = fromCalendarDate 2018 Jun 15
+    , author = Authors.wy
+    , markdown = RemoteData.NotAsked
+    , preview = ""
+    , hero = Hero "/images/hero/ww.jpg" "" ""
+    }
+
+
+yxz : Content
+yxz =
+    { slug = "teacher/yxz"
+    , route = TeacherDetailRoute "yxz"
+    , contentType = Page
+    , name = "yxz"
+    , title = "Ye Xiaozhou"
+    , publishedDate = fromCalendarDate 2018 Jun 15
+    , author = Authors.wy
+    , markdown = RemoteData.NotAsked
+    , preview = ""
+    , hero = Hero "/images/hero/ww.jpg" "" ""
+    }
+
+
+consultants : List Content
+consultants =
+    [ lj, zz, yxz ]
+
+
+xiaoshengchu : Content
+xiaoshengchu =
+    { slug = "course/xiaoshengchu"
+    , route = CourseDetailRoute "xiaoshengchu"
+    , contentType = Page
+    , name = "xiaoshengchu"
+    , title = "Xiao Shengchu"
+    , publishedDate = fromCalendarDate 2018 Jun 15
+    , author = Authors.wy
+    , markdown = RemoteData.NotAsked
+    , preview = ""
+    , hero = Hero "/images/hero/xiaoshengchu.jpg" "" ""
+    }
+
+
+xiaozhuchi : Content
+xiaozhuchi =
+    { slug = "course/xiaozhuchi"
+    , route = CourseDetailRoute "xiaozhuchi"
+    , contentType = Page
+    , name = "xiaozhuchi"
+    , title = "Xiao Zhuchi"
+    , publishedDate = fromCalendarDate 2018 Jun 15
+    , author = Authors.wy
+    , markdown = RemoteData.NotAsked
+    , preview = ""
+    , hero = Hero "/images/hero/xiaozhuchi.jpg" "" ""
+    }
+
+
+yikao : Content
+yikao =
+    { slug = "course/yikao"
+    , route = CourseDetailRoute "yikao"
+    , contentType = Page
+    , name = "yikao"
+    , title = "Yi Kao"
+    , publishedDate = fromCalendarDate 2018 Jun 15
+    , author = Authors.wy
+    , markdown = RemoteData.NotAsked
+    , preview = ""
+    , hero = Hero "/images/hero/yikao.jpg" "" ""
+    }
+
+
+courses : List Content
+courses =
+    [ xiaoshengchu, xiaozhuchi, yikao ]

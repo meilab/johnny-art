@@ -1,4 +1,4 @@
-module Views.TeacherDetail exposing (teacherDetailView)
+module Views.FeatureDetail exposing (featureDetailView)
 
 import Models exposing (..)
 import Authors
@@ -15,8 +15,8 @@ import Views.SharedStyles exposing (..)
 import Teachers exposing (teachers)
 
 
-teacherDetailView : Model -> Html Msg
-teacherDetailView model =
+featureDetailView : Model -> Html Msg
+featureDetailView model =
     let
         heroCss =
             height (vh 100)

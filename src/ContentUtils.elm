@@ -2,7 +2,7 @@ module ContentUtils exposing (..)
 
 import Types exposing (Content, ContentType(..))
 import List
-import Contents exposing (pages, posts, teachers)
+import Contents exposing (pages, posts, teachers, consultants, courses)
 import Date.Extra
 import String
 import Routing exposing (Route)
@@ -10,7 +10,7 @@ import Routing exposing (Route)
 
 allContent : List Content
 allContent =
-    pages ++ posts ++ teachers
+    pages ++ posts ++ teachers ++ consultants ++ courses
 
 
 findByRoute : List Content -> Route -> Maybe Content

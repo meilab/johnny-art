@@ -15,19 +15,48 @@ import Views.SharedStyles exposing (..)
 
 coursesView : Model -> Html Msg
 coursesView model =
+    let
+        heroCss =
+            height (vh 60)
+    in
+        div [ css [ columnGrid, width (pct 100) ] ]
+            [ hero
+                model.currentContent.hero
+                heroCss
+            , content model
+            ]
+
+
+content : Model -> Html Msg
+content model =
     div [ css [ contentContainerCss ] ]
-        [ div [ css [ columnGrid ] ]
+        [ div [ css [ rowGrid ] ]
             (courses
-                |> List.map renderCourse
+                |> List.map (renderCourse model.url.base_url)
             )
         ]
 
 
-renderCourse : Course -> Html Msg
-renderCourse course =
-    div
-        [ css [ columnGrid ] ]
-        [ h1 [] [ text course.name ]
-        , div [ css [ columnGrid ] ]
-            []
-        ]
+renderCourse : String -> Course -> Html Msg
+renderCourse base_url course =
+    let
+        slug =
+            course.slug
+
+        onClickCmd =
+            (NewUrl (base_url ++ slug))
+    in
+        div
+            [ css [ gridItem ]
+            , onClick onClickCmd
+            ]
+            [ img
+                [ src course.introPic
+                , onClick onClickCmd
+                , css [ cursor pointer ]
+                ]
+                []
+            , h2 [] [ text course.title ]
+            , div [ css [ columnGrid ] ]
+                []
+            ]

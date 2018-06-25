@@ -70,10 +70,10 @@ urlFor base_url route =
             base_url ++ "/join"
 
         CoursesRoute ->
-            base_url ++ "/courses"
+            base_url ++ "/courselist"
 
         TeachersRoute ->
-            base_url ++ "/teachers"
+            base_url ++ "/teacherlist"
 
         TeacherDetailRoute slug ->
             base_url ++ slug
@@ -94,7 +94,7 @@ urlFor base_url route =
 routingItem : String -> List ( String, String, Route, String )
 routingItem base_url =
     [ ( "Home", "", HomeRoute, base_url ++ "/" )
-    , ( "Courses", "", CoursesRoute, base_url ++ "/courses" )
+    , ( "Courses", "", CoursesRoute, base_url ++ "/courselist" )
     , ( "About", "", AboutRoute, base_url ++ "/about" )
-    , ( "Teachers", "", TeachersRoute, base_url ++ "/teachers" )
+    , ( "Teachers", "", TeachersRoute, base_url ++ "/teacherlist" )
     ]

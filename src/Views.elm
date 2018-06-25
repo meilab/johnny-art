@@ -18,6 +18,8 @@ import Views.About exposing (aboutView)
 import Views.Join exposing (joiningView)
 import Views.Page exposing (pageView)
 import Views.TeacherDetail exposing (teacherDetailView)
+import Views.FeatureDetail exposing (featureDetailView)
+import Views.CourseDetail exposing (courseDetailView)
 import Views.SharedViews exposing (hero)
 
 
@@ -44,8 +46,17 @@ view model =
                 TeacherDetailRoute slug ->
                     teacherDetailView model
 
-                _ ->
+                CourseDetailRoute slug ->
+                    courseDetailView model
+
+                PostDetailRoute slug ->
                     pageView model
+
+                FeatureDetailRoute slug ->
+                    featureDetailView model
+
+                NotFoundRoute ->
+                    notFoundView
     in
         div
             [ css
@@ -77,3 +88,9 @@ promotion =
             ]
         ]
         [ text "夏季促销：即日起报名小小主持人暑期班享受折扣优惠" ]
+
+
+notFoundView : Html Msg
+notFoundView =
+    div []
+        [ text "Can not find your page" ]

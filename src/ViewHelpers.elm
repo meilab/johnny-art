@@ -92,7 +92,11 @@ linkItem liClass onClickCmd aClass iconClass slug textToShow =
             [ href slug
             , navigationOnClick (onClickCmd)
             , aClass
-            , css [ linkCss ]
+            , css
+                [ linkCss
+                , hover
+                    [ color orange ]
+                ]
             ]
             [ i [ class iconClass ] []
             , text textToShow

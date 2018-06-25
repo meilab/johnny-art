@@ -18,15 +18,15 @@ heroInfoInit : Array Hero
 heroInfoInit =
     let
         hero0 =
-            Hero "images/slider0.jpg" "电视编导" "你是否有一个导演梦"
+            Hero "images/hero/slider0.jpg" "电视编导" "你是否有一个导演梦"
 
         hero1 =
-            Hero "images/slider1.jpg" "电台人生" "你有什么话想通过电台传播"
+            Hero "images/hero/slider1.jpg" "电台人生" "你有什么话想通过电台传播"
 
         hero2 =
-            Hero "images/slider2.jpg" "电视主持" "你是否想走上台前"
+            Hero "images/hero/slider2.jpg" "电视主持" "你是否想走上台前"
 
         hero3 =
-            Hero "images/slider3.jpg" "广播电台" "手把手实战操作"
+            Hero "images/hero/slider3.jpg" "广播电台" "手把手实战操作"
     in
         fromList [ hero0, hero1, hero2, hero3 ]

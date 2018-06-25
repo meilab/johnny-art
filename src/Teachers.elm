@@ -8,6 +8,7 @@ ww : Teacher
 ww =
     { name = "吴老师"
     , avatar = "/images/avatar/ww.jpg"
+    , introPic = "/images/teachers/ww.jpg"
     , route = TeacherDetailRoute "ww"
     , slug = "/teacher/ww"
     , email = "example@aliyun.com"
@@ -21,6 +22,7 @@ cyh : Teacher
 cyh =
     { name = "晓昊"
     , avatar = "/images/avatar/cyh.jpg"
+    , introPic = "/images/teachers/cyh.jpg"
     , route = TeacherDetailRoute "cyh"
     , slug = "/teacher/cyh"
     , email = "example@aliyun.com"
@@ -34,6 +36,7 @@ lj : Teacher
 lj =
     { name = "凌江"
     , avatar = "/images/avatar/lj.jpg"
+    , introPic = "/images/teachers/lj.jpg"
     , route = TeacherDetailRoute "lj"
     , slug = "/teacher/lj"
     , email = "example@aliyun.com"
@@ -47,6 +50,7 @@ zz : Teacher
 zz =
     { name = "周政"
     , avatar = "/images/avatar/zz.jpg"
+    , introPic = "/images/teachers/zz.jpg"
     , route = TeacherDetailRoute "zz"
     , slug = "/teacher/zz"
     , email = "example@aliyun.com"
@@ -60,6 +64,7 @@ yxz : Teacher
 yxz =
     { name = "叶小舟"
     , avatar = "/images/avatar/yxz.jpg"
+    , introPic = "/images/teachers/yxz.jpg"
     , route = TeacherDetailRoute "yxz"
     , slug = "/teacher/yxz"
     , email = "example@aliyun.com"
@@ -73,6 +78,7 @@ xw : Teacher
 xw =
     { name = "小雯"
     , avatar = "/images/avatar/yw.jpg"
+    , introPic = "/images/teachers/yw.jpg"
     , route = TeacherDetailRoute "xw"
     , slug = "/teacher/xw"
     , email = "example@aliyun.com"
@@ -86,6 +92,7 @@ zj : Teacher
 zj =
     { name = "张静"
     , avatar = "/images/avatar/zj.jpg"
+    , introPic = "/images/teachers/zj.jpg"
     , route = TeacherDetailRoute "zj"
     , slug = "/teacher/zj"
     , email = "example@aliyun.com"
@@ -99,6 +106,7 @@ zy : Teacher
 zy =
     { name = "邹阳"
     , avatar = "/images/avatar/zy.jpg"
+    , introPic = "/images/teachers/zy.jpg"
     , route = TeacherDetailRoute "zy"
     , slug = "/teacher/zy"
     , email = "example@aliyun.com"
@@ -112,6 +120,7 @@ lky : Teacher
 lky =
     { name = "赖空译"
     , avatar = "/images/avatar/lky.jpg"
+    , introPic = "/images/teachers/lky.jpg"
     , route = TeacherDetailRoute "lky"
     , slug = "/teacher/lky"
     , email = "example@aliyun.com"

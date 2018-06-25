@@ -12344,9 +12344,9 @@ var _meilab$meilab$Routing$urlFor = F2(
 			case 'JoinRoute':
 				return A2(_elm_lang$core$Basics_ops['++'], base_url, '/join');
 			case 'CoursesRoute':
-				return A2(_elm_lang$core$Basics_ops['++'], base_url, '/courses');
+				return A2(_elm_lang$core$Basics_ops['++'], base_url, '/courselist');
 			case 'TeachersRoute':
-				return A2(_elm_lang$core$Basics_ops['++'], base_url, '/teachers');
+				return A2(_elm_lang$core$Basics_ops['++'], base_url, '/teacherlist');
 			case 'TeacherDetailRoute':
 				return A2(_elm_lang$core$Basics_ops['++'], base_url, _p0._0);
 			case 'PostDetailRoute':
@@ -12532,7 +12532,7 @@ var _meilab$meilab$Routing$routingItem = function (base_url) {
 				_0: 'Courses',
 				_1: '',
 				_2: _meilab$meilab$Routing$CoursesRoute,
-				_3: A2(_elm_lang$core$Basics_ops['++'], base_url, '/courses')
+				_3: A2(_elm_lang$core$Basics_ops['++'], base_url, '/courselist')
 			},
 			_1: {
 				ctor: '::',
@@ -12550,7 +12550,7 @@ var _meilab$meilab$Routing$routingItem = function (base_url) {
 						_0: 'Teachers',
 						_1: '',
 						_2: _meilab$meilab$Routing$TeachersRoute,
-						_3: A2(_elm_lang$core$Basics_ops['++'], base_url, '/teachers')
+						_3: A2(_elm_lang$core$Basics_ops['++'], base_url, '/teacherlist')
 					},
 					_1: {ctor: '[]'}
 				}
@@ -12596,14 +12596,33 @@ var _meilab$meilab$Types$Content = function (a) {
 		};
 	};
 };
-var _meilab$meilab$Types$Teacher = F8(
-	function (a, b, c, d, e, f, g, h) {
-		return {name: a, avatar: b, email: c, route: d, slug: e, bio: f, blog: g, tags: h};
-	});
-var _meilab$meilab$Types$Course = F9(
+var _meilab$meilab$Types$Teacher = F9(
 	function (a, b, c, d, e, f, g, h, i) {
-		return {title: a, name: b, slug: c, route: d, teachers: e, markdown: f, preview: g, hero: h, introPic: i};
+		return {name: a, avatar: b, introPic: c, email: d, route: e, slug: f, bio: g, blog: h, tags: i};
 	});
+var _meilab$meilab$Types$Course = function (a) {
+	return function (b) {
+		return function (c) {
+			return function (d) {
+				return function (e) {
+					return function (f) {
+						return function (g) {
+							return function (h) {
+								return function (i) {
+									return function (j) {
+										return function (k) {
+											return {title: a, name: b, slug: c, route: d, videoUrl: e, teachers: f, markdown: g, preview: h, hero: i, introPic: j, poster: k};
+										};
+									};
+								};
+							};
+						};
+					};
+				};
+			};
+		};
+	};
+};
 var _meilab$meilab$Types$Feature = F6(
 	function (a, b, c, d, e, f) {
 		return {name: a, detail: b, icon: c, pic: d, slug: e, route: f};
@@ -12626,10 +12645,10 @@ var _meilab$meilab$Authors$authors = {
 };
 
 var _meilab$meilab$Config$heroInfoInit = function () {
-	var hero3 = A3(_meilab$meilab$Types$Hero, 'images/slider3.jpg', '广播电台', '手把手实战操作');
-	var hero2 = A3(_meilab$meilab$Types$Hero, 'images/slider2.jpg', '电视主持', '你是否想走上台前');
-	var hero1 = A3(_meilab$meilab$Types$Hero, 'images/slider1.jpg', '电台人生', '你有什么话想通过电台传播');
-	var hero0 = A3(_meilab$meilab$Types$Hero, 'images/slider0.jpg', '电视编导', '你是否有一个导演梦');
+	var hero3 = A3(_meilab$meilab$Types$Hero, 'images/hero/slider3.jpg', '广播电台', '手把手实战操作');
+	var hero2 = A3(_meilab$meilab$Types$Hero, 'images/hero/slider2.jpg', '电视主持', '你是否想走上台前');
+	var hero1 = A3(_meilab$meilab$Types$Hero, 'images/hero/slider1.jpg', '电台人生', '你有什么话想通过电台传播');
+	var hero0 = A3(_meilab$meilab$Types$Hero, 'images/hero/slider0.jpg', '电视编导', '你是否有一个导演梦');
 	return _elm_lang$core$Array$fromList(
 		{
 			ctor: '::',
@@ -12652,6 +12671,164 @@ var _meilab$meilab$Config$heroInfoInit = function () {
 var _meilab$meilab$Config$siteTime = '2018';
 var _meilab$meilab$Config$siteName = 'Johnny-Art';
 
+var _meilab$meilab$Contents$yikao = {
+	slug: 'course/yikao',
+	route: _meilab$meilab$Routing$CourseDetailRoute('yikao'),
+	contentType: _meilab$meilab$Types$Page,
+	name: 'yikao',
+	title: 'Yi Kao',
+	publishedDate: A3(_justinmimbs$elm_date_extra$Date_Extra$fromCalendarDate, 2018, _elm_lang$core$Date$Jun, 15),
+	author: _meilab$meilab$Authors$wy,
+	markdown: _krisajenkins$remotedata$RemoteData$NotAsked,
+	preview: '',
+	hero: A3(_meilab$meilab$Types$Hero, '/images/hero/yikao.jpg', '', '')
+};
+var _meilab$meilab$Contents$xiaozhuchi = {
+	slug: 'course/xiaozhuchi',
+	route: _meilab$meilab$Routing$CourseDetailRoute('xiaozhuchi'),
+	contentType: _meilab$meilab$Types$Page,
+	name: 'xiaozhuchi',
+	title: 'Xiao Zhuchi',
+	publishedDate: A3(_justinmimbs$elm_date_extra$Date_Extra$fromCalendarDate, 2018, _elm_lang$core$Date$Jun, 15),
+	author: _meilab$meilab$Authors$wy,
+	markdown: _krisajenkins$remotedata$RemoteData$NotAsked,
+	preview: '',
+	hero: A3(_meilab$meilab$Types$Hero, '/images/hero/xiaozhuchi.jpg', '', '')
+};
+var _meilab$meilab$Contents$xiaoshengchu = {
+	slug: 'course/xiaoshengchu',
+	route: _meilab$meilab$Routing$CourseDetailRoute('xiaoshengchu'),
+	contentType: _meilab$meilab$Types$Page,
+	name: 'xiaoshengchu',
+	title: 'Xiao Shengchu',
+	publishedDate: A3(_justinmimbs$elm_date_extra$Date_Extra$fromCalendarDate, 2018, _elm_lang$core$Date$Jun, 15),
+	author: _meilab$meilab$Authors$wy,
+	markdown: _krisajenkins$remotedata$RemoteData$NotAsked,
+	preview: '',
+	hero: A3(_meilab$meilab$Types$Hero, '/images/hero/xiaoshengchu.jpg', '', '')
+};
+var _meilab$meilab$Contents$courses = {
+	ctor: '::',
+	_0: _meilab$meilab$Contents$xiaoshengchu,
+	_1: {
+		ctor: '::',
+		_0: _meilab$meilab$Contents$xiaozhuchi,
+		_1: {
+			ctor: '::',
+			_0: _meilab$meilab$Contents$yikao,
+			_1: {ctor: '[]'}
+		}
+	}
+};
+var _meilab$meilab$Contents$yxz = {
+	slug: 'teacher/yxz',
+	route: _meilab$meilab$Routing$TeacherDetailRoute('yxz'),
+	contentType: _meilab$meilab$Types$Page,
+	name: 'yxz',
+	title: 'Ye Xiaozhou',
+	publishedDate: A3(_justinmimbs$elm_date_extra$Date_Extra$fromCalendarDate, 2018, _elm_lang$core$Date$Jun, 15),
+	author: _meilab$meilab$Authors$wy,
+	markdown: _krisajenkins$remotedata$RemoteData$NotAsked,
+	preview: '',
+	hero: A3(_meilab$meilab$Types$Hero, '/images/hero/ww.jpg', '', '')
+};
+var _meilab$meilab$Contents$zz = {
+	slug: 'teacher/zz',
+	route: _meilab$meilab$Routing$TeacherDetailRoute('zz'),
+	contentType: _meilab$meilab$Types$Page,
+	name: 'zz',
+	title: 'Zhou Zheng',
+	publishedDate: A3(_justinmimbs$elm_date_extra$Date_Extra$fromCalendarDate, 2018, _elm_lang$core$Date$Jun, 15),
+	author: _meilab$meilab$Authors$wy,
+	markdown: _krisajenkins$remotedata$RemoteData$NotAsked,
+	preview: '',
+	hero: A3(_meilab$meilab$Types$Hero, '/images/hero/ww.jpg', '', '')
+};
+var _meilab$meilab$Contents$lj = {
+	slug: 'teacher/lj',
+	route: _meilab$meilab$Routing$TeacherDetailRoute('lj'),
+	contentType: _meilab$meilab$Types$Page,
+	name: 'lj',
+	title: 'Ling Jiang',
+	publishedDate: A3(_justinmimbs$elm_date_extra$Date_Extra$fromCalendarDate, 2018, _elm_lang$core$Date$Jun, 15),
+	author: _meilab$meilab$Authors$wy,
+	markdown: _krisajenkins$remotedata$RemoteData$NotAsked,
+	preview: '',
+	hero: A3(_meilab$meilab$Types$Hero, '/images/hero/ww.jpg', '', '')
+};
+var _meilab$meilab$Contents$consultants = {
+	ctor: '::',
+	_0: _meilab$meilab$Contents$lj,
+	_1: {
+		ctor: '::',
+		_0: _meilab$meilab$Contents$zz,
+		_1: {
+			ctor: '::',
+			_0: _meilab$meilab$Contents$yxz,
+			_1: {ctor: '[]'}
+		}
+	}
+};
+var _meilab$meilab$Contents$lky = {
+	slug: 'teacher/lky',
+	route: _meilab$meilab$Routing$TeacherDetailRoute('lky'),
+	contentType: _meilab$meilab$Types$Page,
+	name: 'lky',
+	title: 'Lai Kongyi',
+	publishedDate: A3(_justinmimbs$elm_date_extra$Date_Extra$fromCalendarDate, 2018, _elm_lang$core$Date$Jun, 15),
+	author: _meilab$meilab$Authors$wy,
+	markdown: _krisajenkins$remotedata$RemoteData$NotAsked,
+	preview: '',
+	hero: A3(_meilab$meilab$Types$Hero, '/images/hero/ww.jpg', '', '')
+};
+var _meilab$meilab$Contents$zy = {
+	slug: 'teacher/zy',
+	route: _meilab$meilab$Routing$TeacherDetailRoute('zy'),
+	contentType: _meilab$meilab$Types$Page,
+	name: 'zy',
+	title: 'Zou Yang',
+	publishedDate: A3(_justinmimbs$elm_date_extra$Date_Extra$fromCalendarDate, 2018, _elm_lang$core$Date$Jun, 15),
+	author: _meilab$meilab$Authors$wy,
+	markdown: _krisajenkins$remotedata$RemoteData$NotAsked,
+	preview: '',
+	hero: A3(_meilab$meilab$Types$Hero, '/images/hero/ww.jpg', '', '')
+};
+var _meilab$meilab$Contents$zj = {
+	slug: 'teacher/zj',
+	route: _meilab$meilab$Routing$TeacherDetailRoute('zj'),
+	contentType: _meilab$meilab$Types$Page,
+	name: 'zj',
+	title: 'Zhang Jing',
+	publishedDate: A3(_justinmimbs$elm_date_extra$Date_Extra$fromCalendarDate, 2018, _elm_lang$core$Date$Jun, 15),
+	author: _meilab$meilab$Authors$wy,
+	markdown: _krisajenkins$remotedata$RemoteData$NotAsked,
+	preview: '',
+	hero: A3(_meilab$meilab$Types$Hero, '/images/hero/ww.jpg', '', '')
+};
+var _meilab$meilab$Contents$xw = {
+	slug: 'teacher/xw',
+	route: _meilab$meilab$Routing$TeacherDetailRoute('xw'),
+	contentType: _meilab$meilab$Types$Page,
+	name: 'xw',
+	title: 'Xiao Wen',
+	publishedDate: A3(_justinmimbs$elm_date_extra$Date_Extra$fromCalendarDate, 2018, _elm_lang$core$Date$Jun, 15),
+	author: _meilab$meilab$Authors$wy,
+	markdown: _krisajenkins$remotedata$RemoteData$NotAsked,
+	preview: '',
+	hero: A3(_meilab$meilab$Types$Hero, '/images/hero/ww.jpg', '', '')
+};
+var _meilab$meilab$Contents$cyh = {
+	slug: 'teacher/cyh',
+	route: _meilab$meilab$Routing$TeacherDetailRoute('cyh'),
+	contentType: _meilab$meilab$Types$Page,
+	name: 'cyh',
+	title: 'Chen Yinghao',
+	publishedDate: A3(_justinmimbs$elm_date_extra$Date_Extra$fromCalendarDate, 2018, _elm_lang$core$Date$Jun, 15),
+	author: _meilab$meilab$Authors$wy,
+	markdown: _krisajenkins$remotedata$RemoteData$NotAsked,
+	preview: '',
+	hero: A3(_meilab$meilab$Types$Hero, '/images/hero/ww.jpg', '', '')
+};
 var _meilab$meilab$Contents$ww = {
 	slug: 'teacher/ww',
 	route: _meilab$meilab$Routing$TeacherDetailRoute('ww'),
@@ -12662,12 +12839,32 @@ var _meilab$meilab$Contents$ww = {
 	author: _meilab$meilab$Authors$wy,
 	markdown: _krisajenkins$remotedata$RemoteData$NotAsked,
 	preview: '',
-	hero: A3(_meilab$meilab$Types$Hero, '/images/wwHero.jpg', '', '')
+	hero: A3(_meilab$meilab$Types$Hero, '/images/hero/ww.jpg', '', '')
 };
 var _meilab$meilab$Contents$teachers = {
 	ctor: '::',
 	_0: _meilab$meilab$Contents$ww,
-	_1: {ctor: '[]'}
+	_1: {
+		ctor: '::',
+		_0: _meilab$meilab$Contents$cyh,
+		_1: {
+			ctor: '::',
+			_0: _meilab$meilab$Contents$xw,
+			_1: {
+				ctor: '::',
+				_0: _meilab$meilab$Contents$zj,
+				_1: {
+					ctor: '::',
+					_0: _meilab$meilab$Contents$zy,
+					_1: {
+						ctor: '::',
+						_0: _meilab$meilab$Contents$lky,
+						_1: {ctor: '[]'}
+					}
+				}
+			}
+		}
+	}
 };
 var _meilab$meilab$Contents$helloWorld = {
 	slug: '/hello-world',
@@ -12679,7 +12876,7 @@ var _meilab$meilab$Contents$helloWorld = {
 	markdown: _krisajenkins$remotedata$RemoteData$NotAsked,
 	contentType: _meilab$meilab$Types$Post,
 	preview: 'Hello World in Elm',
-	hero: A3(_meilab$meilab$Types$Hero, 'images/cover1.jpg', '', '')
+	hero: A3(_meilab$meilab$Types$Hero, 'images/hero/cover1.jpg', '', '')
 };
 var _meilab$meilab$Contents$posts = {
 	ctor: '::',
@@ -12696,7 +12893,7 @@ var _meilab$meilab$Contents$notFound404 = {
 	author: _meilab$meilab$Authors$wy,
 	markdown: _krisajenkins$remotedata$RemoteData$NotAsked,
 	preview: '',
-	hero: A3(_meilab$meilab$Types$Hero, 'images/cover1.jpg', '', '')
+	hero: A3(_meilab$meilab$Types$Hero, 'images/hero/cover1.jpg', '', '')
 };
 var _meilab$meilab$Contents$notFoundContent = {
 	slug: 'notfound',
@@ -12708,7 +12905,7 @@ var _meilab$meilab$Contents$notFoundContent = {
 	author: _meilab$meilab$Authors$wy,
 	markdown: _krisajenkins$remotedata$RemoteData$NotAsked,
 	preview: '',
-	hero: A3(_meilab$meilab$Types$Hero, 'images/cover1.jpg', '', '')
+	hero: A3(_meilab$meilab$Types$Hero, 'images/hero/cover1.jpg', '', '')
 };
 var _meilab$meilab$Contents$teacherList = {
 	slug: 'teacherlist',
@@ -12720,19 +12917,19 @@ var _meilab$meilab$Contents$teacherList = {
 	author: _meilab$meilab$Authors$wy,
 	markdown: _krisajenkins$remotedata$RemoteData$NotAsked,
 	preview: '',
-	hero: A3(_meilab$meilab$Types$Hero, 'images/cover1.jpg', '', '')
+	hero: A3(_meilab$meilab$Types$Hero, 'images/hero/teachers.jpg', '', '')
 };
-var _meilab$meilab$Contents$courses = {
-	slug: 'courses',
+var _meilab$meilab$Contents$courselist = {
+	slug: 'courselist',
 	route: _meilab$meilab$Routing$CoursesRoute,
 	contentType: _meilab$meilab$Types$Page,
-	name: 'courses',
+	name: 'courselist',
 	title: 'Courses',
 	publishedDate: A3(_justinmimbs$elm_date_extra$Date_Extra$fromCalendarDate, 2018, _elm_lang$core$Date$Jun, 15),
 	author: _meilab$meilab$Authors$wy,
 	markdown: _krisajenkins$remotedata$RemoteData$NotAsked,
 	preview: '',
-	hero: A3(_meilab$meilab$Types$Hero, 'images/cover1.jpg', '', '')
+	hero: A3(_meilab$meilab$Types$Hero, 'images/hero/courses.jpg', '', '')
 };
 var _meilab$meilab$Contents$join = {
 	slug: '/join',
@@ -12744,7 +12941,7 @@ var _meilab$meilab$Contents$join = {
 	author: _meilab$meilab$Authors$wy,
 	markdown: _krisajenkins$remotedata$RemoteData$NotAsked,
 	preview: '',
-	hero: A3(_meilab$meilab$Types$Hero, 'images/cover1.jpg', '', '')
+	hero: A3(_meilab$meilab$Types$Hero, 'images/hero/cover1.jpg', '', '')
 };
 var _meilab$meilab$Contents$about = {
 	slug: '/about',
@@ -12756,7 +12953,7 @@ var _meilab$meilab$Contents$about = {
 	author: _meilab$meilab$Authors$wy,
 	markdown: _krisajenkins$remotedata$RemoteData$NotAsked,
 	preview: '',
-	hero: A3(_meilab$meilab$Types$Hero, 'images/aboutHero.jpg', '', '')
+	hero: A3(_meilab$meilab$Types$Hero, 'images/hero/about.jpg', '', '')
 };
 var _meilab$meilab$Contents$home = {
 	slug: '/',
@@ -12768,7 +12965,7 @@ var _meilab$meilab$Contents$home = {
 	author: _meilab$meilab$Authors$wy,
 	markdown: _krisajenkins$remotedata$RemoteData$NotAsked,
 	preview: '',
-	hero: A3(_meilab$meilab$Types$Hero, 'images/cover1.jpg', '', '')
+	hero: A3(_meilab$meilab$Types$Hero, 'images/hero/cover1.jpg', '', '')
 };
 var _meilab$meilab$Contents$pages = {
 	ctor: '::',
@@ -12781,7 +12978,7 @@ var _meilab$meilab$Contents$pages = {
 			_0: _meilab$meilab$Contents$join,
 			_1: {
 				ctor: '::',
-				_0: _meilab$meilab$Contents$courses,
+				_0: _meilab$meilab$Contents$courselist,
 				_1: {
 					ctor: '::',
 					_0: _meilab$meilab$Contents$teacherList,
@@ -12865,11 +13062,18 @@ var _meilab$meilab$ContentUtils$findByRoute = F2(
 var _meilab$meilab$ContentUtils$allContent = A2(
 	_elm_lang$core$Basics_ops['++'],
 	_meilab$meilab$Contents$pages,
-	A2(_elm_lang$core$Basics_ops['++'], _meilab$meilab$Contents$posts, _meilab$meilab$Contents$teachers));
+	A2(
+		_elm_lang$core$Basics_ops['++'],
+		_meilab$meilab$Contents$posts,
+		A2(
+			_elm_lang$core$Basics_ops['++'],
+			_meilab$meilab$Contents$teachers,
+			A2(_elm_lang$core$Basics_ops['++'], _meilab$meilab$Contents$consultants, _meilab$meilab$Contents$courses))));
 
 var _meilab$meilab$Teachers$lky = {
 	name: '赖空译',
 	avatar: '/images/avatar/lky.jpg',
+	introPic: '/images/teachers/lky.jpg',
 	route: _meilab$meilab$Routing$TeacherDetailRoute('lky'),
 	slug: '/teacher/lky',
 	email: 'example@aliyun.com',
@@ -12896,6 +13100,7 @@ var _meilab$meilab$Teachers$lky = {
 var _meilab$meilab$Teachers$zy = {
 	name: '邹阳',
 	avatar: '/images/avatar/zy.jpg',
+	introPic: '/images/teachers/zy.jpg',
 	route: _meilab$meilab$Routing$TeacherDetailRoute('zy'),
 	slug: '/teacher/zy',
 	email: 'example@aliyun.com',
@@ -12910,6 +13115,7 @@ var _meilab$meilab$Teachers$zy = {
 var _meilab$meilab$Teachers$zj = {
 	name: '张静',
 	avatar: '/images/avatar/zj.jpg',
+	introPic: '/images/teachers/zj.jpg',
 	route: _meilab$meilab$Routing$TeacherDetailRoute('zj'),
 	slug: '/teacher/zj',
 	email: 'example@aliyun.com',
@@ -12936,6 +13142,7 @@ var _meilab$meilab$Teachers$zj = {
 var _meilab$meilab$Teachers$xw = {
 	name: '小雯',
 	avatar: '/images/avatar/yw.jpg',
+	introPic: '/images/teachers/yw.jpg',
 	route: _meilab$meilab$Routing$TeacherDetailRoute('xw'),
 	slug: '/teacher/xw',
 	email: 'example@aliyun.com',
@@ -12962,6 +13169,7 @@ var _meilab$meilab$Teachers$xw = {
 var _meilab$meilab$Teachers$yxz = {
 	name: '叶小舟',
 	avatar: '/images/avatar/yxz.jpg',
+	introPic: '/images/teachers/yxz.jpg',
 	route: _meilab$meilab$Routing$TeacherDetailRoute('yxz'),
 	slug: '/teacher/yxz',
 	email: 'example@aliyun.com',
@@ -13004,6 +13212,7 @@ var _meilab$meilab$Teachers$yxz = {
 var _meilab$meilab$Teachers$zz = {
 	name: '周政',
 	avatar: '/images/avatar/zz.jpg',
+	introPic: '/images/teachers/zz.jpg',
 	route: _meilab$meilab$Routing$TeacherDetailRoute('zz'),
 	slug: '/teacher/zz',
 	email: 'example@aliyun.com',
@@ -13034,6 +13243,7 @@ var _meilab$meilab$Teachers$zz = {
 var _meilab$meilab$Teachers$lj = {
 	name: '凌江',
 	avatar: '/images/avatar/lj.jpg',
+	introPic: '/images/teachers/lj.jpg',
 	route: _meilab$meilab$Routing$TeacherDetailRoute('lj'),
 	slug: '/teacher/lj',
 	email: 'example@aliyun.com',
@@ -13073,6 +13283,7 @@ var _meilab$meilab$Teachers$consultants = {
 var _meilab$meilab$Teachers$cyh = {
 	name: '晓昊',
 	avatar: '/images/avatar/cyh.jpg',
+	introPic: '/images/teachers/cyh.jpg',
 	route: _meilab$meilab$Routing$TeacherDetailRoute('cyh'),
 	slug: '/teacher/cyh',
 	email: 'example@aliyun.com',
@@ -13095,6 +13306,7 @@ var _meilab$meilab$Teachers$cyh = {
 var _meilab$meilab$Teachers$ww = {
 	name: '吴老师',
 	avatar: '/images/avatar/ww.jpg',
+	introPic: '/images/teachers/ww.jpg',
 	route: _meilab$meilab$Routing$TeacherDetailRoute('ww'),
 	slug: '/teacher/ww',
 	email: 'example@aliyun.com',
@@ -13153,9 +13365,10 @@ var _meilab$meilab$Teachers$teachers = {
 };
 
 var _meilab$meilab$Courses$yikao = {
-	slug: '/yikao',
+	slug: 'course/yikao',
 	route: _meilab$meilab$Routing$CourseDetailRoute('yikao'),
 	title: '播音主持艺考',
+	videoUrl: 'http://player.youku.com/embed/XNTk1ODM2MTQ4',
 	name: 'yikao',
 	teachers: {
 		ctor: '::',
@@ -13165,12 +13378,14 @@ var _meilab$meilab$Courses$yikao = {
 	markdown: _krisajenkins$remotedata$RemoteData$NotAsked,
 	preview: 'Hello World in Elm',
 	hero: A3(_meilab$meilab$Types$Hero, 'images/cover1.jpg', '', ''),
-	introPic: 'images/yikao.jpg'
+	introPic: 'images/yikao.jpg',
+	poster: 'images/poster/yikao.jpg'
 };
 var _meilab$meilab$Courses$xiaozhuchi = {
-	slug: '/xiaozhuchi',
+	slug: 'course/xiaozhuchi',
 	route: _meilab$meilab$Routing$CourseDetailRoute('xiaozhuchi'),
 	title: '小小主持人',
+	videoUrl: 'http://player.youku.com/embed/XMzY1NDMzOTAwOA',
 	name: 'xiaozhuchi',
 	teachers: {
 		ctor: '::',
@@ -13180,12 +13395,14 @@ var _meilab$meilab$Courses$xiaozhuchi = {
 	markdown: _krisajenkins$remotedata$RemoteData$NotAsked,
 	preview: 'Hello World in Elm',
 	hero: A3(_meilab$meilab$Types$Hero, 'images/cover1.jpg', '', ''),
-	introPic: 'images/xiaozhuchi.jpg'
+	introPic: 'images/xiaozhuchi.jpg',
+	poster: 'images/poster/xiaozhuchi.jpg'
 };
 var _meilab$meilab$Courses$xiaoshengchu = {
-	slug: '/xiaoshengchu',
+	slug: 'course/xiaoshengchu',
 	route: _meilab$meilab$Routing$CourseDetailRoute('xiaoshengchu'),
 	title: '小升初',
+	videoUrl: 'http://player.youku.com/embed/XMzQ3OTk1NTA1Ng',
 	name: 'xiaoshengchu',
 	teachers: {
 		ctor: '::',
@@ -13195,7 +13412,8 @@ var _meilab$meilab$Courses$xiaoshengchu = {
 	markdown: _krisajenkins$remotedata$RemoteData$NotAsked,
 	preview: 'Hello World in Elm',
 	hero: A3(_meilab$meilab$Types$Hero, 'images/cover1.jpg', '', ''),
-	introPic: 'images/xiaoshengchu.jpg'
+	introPic: 'images/xiaoshengchu.jpg',
+	poster: 'images/poster/xiaoshengchu.jpg'
 };
 var _meilab$meilab$Courses$courses = {
 	ctor: '::',
@@ -20161,7 +20379,16 @@ var _meilab$meilab$ViewHelpers$linkItem = F6(
 										{
 											ctor: '::',
 											_0: _meilab$meilab$Views_SharedStyles$linkCss,
-											_1: {ctor: '[]'}
+											_1: {
+												ctor: '::',
+												_0: _rtfeldman$elm_css$Css$hover(
+													{
+														ctor: '::',
+														_0: _rtfeldman$elm_css$Css$color(_rtfeldman$elm_css$Css_Colors$orange),
+														_1: {ctor: '[]'}
+													}),
+												_1: {ctor: '[]'}
+											}
 										}),
 									_1: {ctor: '[]'}
 								}
@@ -21480,39 +21707,46 @@ var _meilab$meilab$Views_SharedViews$renderFooter = A2(
 		_1: {ctor: '[]'}
 	});
 
-var _meilab$meilab$Views_Teachers$renderTeacher = function (teacher) {
-	return A2(
-		_rtfeldman$elm_css$Html_Styled$div,
-		{
-			ctor: '::',
-			_0: _rtfeldman$elm_css$Html_Styled_Attributes$css(
-				{
-					ctor: '::',
-					_0: _meilab$meilab$Views_SharedStyles$columnGrid,
-					_1: {ctor: '[]'}
-				}),
-			_1: {ctor: '[]'}
-		},
-		{
-			ctor: '::',
-			_0: A2(
-				_rtfeldman$elm_css$Html_Styled$h1,
-				{ctor: '[]'},
-				{
-					ctor: '::',
-					_0: _rtfeldman$elm_css$Html_Styled$text(teacher.name),
-					_1: {ctor: '[]'}
-				}),
-			_1: {
+var _meilab$meilab$Views_Teachers$renderTeacher = F2(
+	function (base_url, teacher) {
+		var slug = teacher.slug;
+		var onClickCmd = _meilab$meilab$Messages$NewUrl(
+			A2(_elm_lang$core$Basics_ops['++'], base_url, slug));
+		return A2(
+			_rtfeldman$elm_css$Html_Styled$div,
+			{
 				ctor: '::',
-				_0: A2(
-					_rtfeldman$elm_css$Html_Styled$h2,
-					{ctor: '[]'},
+				_0: _rtfeldman$elm_css$Html_Styled_Attributes$css(
 					{
 						ctor: '::',
-						_0: _rtfeldman$elm_css$Html_Styled$text(teacher.bio),
+						_0: _meilab$meilab$Views_SharedStyles$gridItem,
 						_1: {ctor: '[]'}
 					}),
+				_1: {ctor: '[]'}
+			},
+			{
+				ctor: '::',
+				_0: A2(
+					_rtfeldman$elm_css$Html_Styled$img,
+					{
+						ctor: '::',
+						_0: _rtfeldman$elm_css$Html_Styled_Attributes$src(teacher.introPic),
+						_1: {
+							ctor: '::',
+							_0: _rtfeldman$elm_css$Html_Styled_Events$onClick(onClickCmd),
+							_1: {
+								ctor: '::',
+								_0: _rtfeldman$elm_css$Html_Styled_Attributes$css(
+									{
+										ctor: '::',
+										_0: _rtfeldman$elm_css$Css$cursor(_rtfeldman$elm_css$Css$pointer),
+										_1: {ctor: '[]'}
+									}),
+								_1: {ctor: '[]'}
+							}
+						}
+					},
+					{ctor: '[]'}),
 				_1: {
 					ctor: '::',
 					_0: A2(
@@ -21552,10 +21786,9 @@ var _meilab$meilab$Views_Teachers$renderTeacher = function (teacher) {
 						}),
 					_1: {ctor: '[]'}
 				}
-			}
-		});
-};
-var _meilab$meilab$Views_Teachers$teachersView = function (model) {
+			});
+	});
+var _meilab$meilab$Views_Teachers$content = function (model) {
 	return A2(
 		_rtfeldman$elm_css$Html_Styled$div,
 		{
@@ -21577,17 +21810,21 @@ var _meilab$meilab$Views_Teachers$teachersView = function (model) {
 					_0: _rtfeldman$elm_css$Html_Styled_Attributes$css(
 						{
 							ctor: '::',
-							_0: _meilab$meilab$Views_SharedStyles$columnGrid,
+							_0: _meilab$meilab$Views_SharedStyles$rowGrid,
 							_1: {ctor: '[]'}
 						}),
 					_1: {ctor: '[]'}
 				},
-				A2(_elm_lang$core$List$map, _meilab$meilab$Views_Teachers$renderTeacher, _meilab$meilab$Teachers$teachers)),
+				A2(
+					_elm_lang$core$List$map,
+					_meilab$meilab$Views_Teachers$renderTeacher(model.url.base_url),
+					A2(_elm_lang$core$Basics_ops['++'], _meilab$meilab$Teachers$teachers, _meilab$meilab$Teachers$consultants))),
 			_1: {ctor: '[]'}
 		});
 };
-
-var _meilab$meilab$Views_Courses$renderCourse = function (course) {
+var _meilab$meilab$Views_Teachers$teachersView = function (model) {
+	var heroCss = _rtfeldman$elm_css$Css$height(
+		_rtfeldman$elm_css$Css$vh(60));
 	return A2(
 		_rtfeldman$elm_css$Html_Styled$div,
 		{
@@ -21596,40 +21833,101 @@ var _meilab$meilab$Views_Courses$renderCourse = function (course) {
 				{
 					ctor: '::',
 					_0: _meilab$meilab$Views_SharedStyles$columnGrid,
-					_1: {ctor: '[]'}
+					_1: {
+						ctor: '::',
+						_0: _rtfeldman$elm_css$Css$width(
+							_rtfeldman$elm_css$Css$pct(100)),
+						_1: {ctor: '[]'}
+					}
 				}),
 			_1: {ctor: '[]'}
 		},
 		{
 			ctor: '::',
-			_0: A2(
-				_rtfeldman$elm_css$Html_Styled$h1,
-				{ctor: '[]'},
-				{
-					ctor: '::',
-					_0: _rtfeldman$elm_css$Html_Styled$text(course.name),
-					_1: {ctor: '[]'}
-				}),
+			_0: A2(_meilab$meilab$Views_SharedViews$hero, model.currentContent.hero, heroCss),
 			_1: {
 				ctor: '::',
-				_0: A2(
-					_rtfeldman$elm_css$Html_Styled$div,
-					{
-						ctor: '::',
-						_0: _rtfeldman$elm_css$Html_Styled_Attributes$css(
-							{
-								ctor: '::',
-								_0: _meilab$meilab$Views_SharedStyles$columnGrid,
-								_1: {ctor: '[]'}
-							}),
-						_1: {ctor: '[]'}
-					},
-					{ctor: '[]'}),
+				_0: _meilab$meilab$Views_Teachers$content(model),
 				_1: {ctor: '[]'}
 			}
 		});
 };
-var _meilab$meilab$Views_Courses$coursesView = function (model) {
+
+var _meilab$meilab$Views_Courses$renderCourse = F2(
+	function (base_url, course) {
+		var slug = course.slug;
+		var onClickCmd = _meilab$meilab$Messages$NewUrl(
+			A2(_elm_lang$core$Basics_ops['++'], base_url, slug));
+		return A2(
+			_rtfeldman$elm_css$Html_Styled$div,
+			{
+				ctor: '::',
+				_0: _rtfeldman$elm_css$Html_Styled_Attributes$css(
+					{
+						ctor: '::',
+						_0: _meilab$meilab$Views_SharedStyles$gridItem,
+						_1: {ctor: '[]'}
+					}),
+				_1: {
+					ctor: '::',
+					_0: _rtfeldman$elm_css$Html_Styled_Events$onClick(onClickCmd),
+					_1: {ctor: '[]'}
+				}
+			},
+			{
+				ctor: '::',
+				_0: A2(
+					_rtfeldman$elm_css$Html_Styled$img,
+					{
+						ctor: '::',
+						_0: _rtfeldman$elm_css$Html_Styled_Attributes$src(course.introPic),
+						_1: {
+							ctor: '::',
+							_0: _rtfeldman$elm_css$Html_Styled_Events$onClick(onClickCmd),
+							_1: {
+								ctor: '::',
+								_0: _rtfeldman$elm_css$Html_Styled_Attributes$css(
+									{
+										ctor: '::',
+										_0: _rtfeldman$elm_css$Css$cursor(_rtfeldman$elm_css$Css$pointer),
+										_1: {ctor: '[]'}
+									}),
+								_1: {ctor: '[]'}
+							}
+						}
+					},
+					{ctor: '[]'}),
+				_1: {
+					ctor: '::',
+					_0: A2(
+						_rtfeldman$elm_css$Html_Styled$h2,
+						{ctor: '[]'},
+						{
+							ctor: '::',
+							_0: _rtfeldman$elm_css$Html_Styled$text(course.title),
+							_1: {ctor: '[]'}
+						}),
+					_1: {
+						ctor: '::',
+						_0: A2(
+							_rtfeldman$elm_css$Html_Styled$div,
+							{
+								ctor: '::',
+								_0: _rtfeldman$elm_css$Html_Styled_Attributes$css(
+									{
+										ctor: '::',
+										_0: _meilab$meilab$Views_SharedStyles$columnGrid,
+										_1: {ctor: '[]'}
+									}),
+								_1: {ctor: '[]'}
+							},
+							{ctor: '[]'}),
+						_1: {ctor: '[]'}
+					}
+				}
+			});
+	});
+var _meilab$meilab$Views_Courses$content = function (model) {
 	return A2(
 		_rtfeldman$elm_css$Html_Styled$div,
 		{
@@ -21651,13 +21949,46 @@ var _meilab$meilab$Views_Courses$coursesView = function (model) {
 					_0: _rtfeldman$elm_css$Html_Styled_Attributes$css(
 						{
 							ctor: '::',
-							_0: _meilab$meilab$Views_SharedStyles$columnGrid,
+							_0: _meilab$meilab$Views_SharedStyles$rowGrid,
 							_1: {ctor: '[]'}
 						}),
 					_1: {ctor: '[]'}
 				},
-				A2(_elm_lang$core$List$map, _meilab$meilab$Views_Courses$renderCourse, _meilab$meilab$Courses$courses)),
+				A2(
+					_elm_lang$core$List$map,
+					_meilab$meilab$Views_Courses$renderCourse(model.url.base_url),
+					_meilab$meilab$Courses$courses)),
 			_1: {ctor: '[]'}
+		});
+};
+var _meilab$meilab$Views_Courses$coursesView = function (model) {
+	var heroCss = _rtfeldman$elm_css$Css$height(
+		_rtfeldman$elm_css$Css$vh(60));
+	return A2(
+		_rtfeldman$elm_css$Html_Styled$div,
+		{
+			ctor: '::',
+			_0: _rtfeldman$elm_css$Html_Styled_Attributes$css(
+				{
+					ctor: '::',
+					_0: _meilab$meilab$Views_SharedStyles$columnGrid,
+					_1: {
+						ctor: '::',
+						_0: _rtfeldman$elm_css$Css$width(
+							_rtfeldman$elm_css$Css$pct(100)),
+						_1: {ctor: '[]'}
+					}
+				}),
+			_1: {ctor: '[]'}
+		},
+		{
+			ctor: '::',
+			_0: A2(_meilab$meilab$Views_SharedViews$hero, model.currentContent.hero, heroCss),
+			_1: {
+				ctor: '::',
+				_0: _meilab$meilab$Views_Courses$content(model),
+				_1: {ctor: '[]'}
+			}
 		});
 };
 
@@ -21714,7 +22045,7 @@ var _meilab$meilab$Views_Home$renderTeacherTags = function (tag) {
 			_1: {ctor: '[]'}
 		});
 };
-var _meilab$meilab$Views_Home$renderTeacher = F3(
+var _meilab$meilab$Views_Home$renderMember = F3(
 	function (base_url, colorCss, teacher) {
 		var slug = teacher.slug;
 		var onClickCmd = _meilab$meilab$Messages$NewUrl(
@@ -21927,7 +22258,7 @@ var _meilab$meilab$Views_Home$renderMembers = F5(
 								},
 								A2(
 									_elm_lang$core$List$map,
-									A2(_meilab$meilab$Views_Home$renderTeacher, base_url, colorCss),
+									A2(_meilab$meilab$Views_Home$renderMember, base_url, colorCss),
 									members)),
 							_1: {ctor: '[]'}
 						}
@@ -23585,7 +23916,169 @@ var _meilab$meilab$Views_Page$pageView = function (model) {
 		});
 };
 
-var _meilab$meilab$Views_TeacherDetail$content = function (model) {
+var _meilab$meilab$Views_TeacherDetail$renderCourse = function (teacher) {
+	return A2(
+		_rtfeldman$elm_css$Html_Styled$div,
+		{ctor: '[]'},
+		{ctor: '[]'});
+};
+var _meilab$meilab$Views_TeacherDetail$renderTeacherTags = function (tag) {
+	return A2(
+		_rtfeldman$elm_css$Html_Styled$div,
+		{
+			ctor: '::',
+			_0: _rtfeldman$elm_css$Html_Styled_Attributes$css(
+				{
+					ctor: '::',
+					_0: _rtfeldman$elm_css$Css$paddingTop(
+						_rtfeldman$elm_css$Css$px(10)),
+					_1: {ctor: '[]'}
+				}),
+			_1: {ctor: '[]'}
+		},
+		{
+			ctor: '::',
+			_0: _rtfeldman$elm_css$Html_Styled$text(tag),
+			_1: {ctor: '[]'}
+		});
+};
+var _meilab$meilab$Views_TeacherDetail$renderInfo = function (teacher) {
+	return A2(
+		_rtfeldman$elm_css$Html_Styled$div,
+		{
+			ctor: '::',
+			_0: _rtfeldman$elm_css$Html_Styled_Attributes$css(
+				{
+					ctor: '::',
+					_0: _rtfeldman$elm_css$Css$backgroundColor(
+						A4(_rtfeldman$elm_css$Css$rgba, 0, 0, 0, 0.8)),
+					_1: {
+						ctor: '::',
+						_0: _rtfeldman$elm_css$Css$maxWidth(
+							_rtfeldman$elm_css$Css$px(650)),
+						_1: {
+							ctor: '::',
+							_0: A2(
+								_rtfeldman$elm_css$Css$margin2,
+								_rtfeldman$elm_css$Css$zero,
+								_rtfeldman$elm_css$Css$pct(5)),
+							_1: {
+								ctor: '::',
+								_0: A2(
+									_rtfeldman$elm_css$Css$padding2,
+									_rtfeldman$elm_css$Css$px(20),
+									_rtfeldman$elm_css$Css$px(25)),
+								_1: {
+									ctor: '::',
+									_0: _rtfeldman$elm_css$Css$position(_rtfeldman$elm_css$Css$absolute),
+									_1: {
+										ctor: '::',
+										_0: _rtfeldman$elm_css$Css$top(
+											_rtfeldman$elm_css$Css$pct(30)),
+										_1: {ctor: '[]'}
+									}
+								}
+							}
+						}
+					}
+				}),
+			_1: {ctor: '[]'}
+		},
+		{
+			ctor: '::',
+			_0: A2(
+				_rtfeldman$elm_css$Html_Styled$div,
+				{
+					ctor: '::',
+					_0: _rtfeldman$elm_css$Html_Styled_Attributes$css(
+						{
+							ctor: '::',
+							_0: _meilab$meilab$Views_SharedStyles$columnGrid,
+							_1: {
+								ctor: '::',
+								_0: _rtfeldman$elm_css$Css$color(_rtfeldman$elm_css$Css_Colors$white),
+								_1: {ctor: '[]'}
+							}
+						}),
+					_1: {ctor: '[]'}
+				},
+				{
+					ctor: '::',
+					_0: A2(
+						_rtfeldman$elm_css$Html_Styled$img,
+						{
+							ctor: '::',
+							_0: _rtfeldman$elm_css$Html_Styled_Attributes$src(teacher.avatar),
+							_1: {
+								ctor: '::',
+								_0: _rtfeldman$elm_css$Html_Styled_Attributes$css(
+									{
+										ctor: '::',
+										_0: _meilab$meilab$Views_SharedStyles$avatarImgCss,
+										_1: {
+											ctor: '::',
+											_0: _rtfeldman$elm_css$Css$width(
+												_rtfeldman$elm_css$Css$em(8)),
+											_1: {
+												ctor: '::',
+												_0: _rtfeldman$elm_css$Css$height(
+													_rtfeldman$elm_css$Css$em(8)),
+												_1: {ctor: '[]'}
+											}
+										}
+									}),
+								_1: {ctor: '[]'}
+							}
+						},
+						{ctor: '[]'}),
+					_1: {
+						ctor: '::',
+						_0: A2(
+							_rtfeldman$elm_css$Html_Styled$p,
+							{
+								ctor: '::',
+								_0: _rtfeldman$elm_css$Html_Styled_Attributes$css(
+									{
+										ctor: '::',
+										_0: _rtfeldman$elm_css$Css$fontSize(
+											_rtfeldman$elm_css$Css$em(1.25)),
+										_1: {
+											ctor: '::',
+											_0: _rtfeldman$elm_css$Css$fontWeight(
+												_rtfeldman$elm_css$Css$int(700)),
+											_1: {ctor: '[]'}
+										}
+									}),
+								_1: {ctor: '[]'}
+							},
+							{
+								ctor: '::',
+								_0: _rtfeldman$elm_css$Html_Styled$text(teacher.name),
+								_1: {ctor: '[]'}
+							}),
+						_1: {
+							ctor: '::',
+							_0: A2(
+								_rtfeldman$elm_css$Html_Styled$div,
+								{
+									ctor: '::',
+									_0: _rtfeldman$elm_css$Html_Styled_Attributes$css(
+										{
+											ctor: '::',
+											_0: _meilab$meilab$Views_SharedStyles$columnGrid,
+											_1: {ctor: '[]'}
+										}),
+									_1: {ctor: '[]'}
+								},
+								A2(_elm_lang$core$List$map, _meilab$meilab$Views_TeacherDetail$renderTeacherTags, teacher.tags)),
+							_1: {ctor: '[]'}
+						}
+					}
+				}),
+			_1: {ctor: '[]'}
+		});
+};
+var _meilab$meilab$Views_TeacherDetail$teacherDetailView = function (model) {
 	var teacher = A2(
 		_elm_lang$core$Maybe$withDefault,
 		_meilab$meilab$Teachers$ww,
@@ -23596,41 +24089,6 @@ var _meilab$meilab$Views_TeacherDetail$content = function (model) {
 					return _elm_lang$core$Native_Utils.eq(item.route, model.currentContent.route);
 				},
 				_meilab$meilab$Teachers$teachers)));
-	return A2(
-		_rtfeldman$elm_css$Html_Styled$div,
-		{
-			ctor: '::',
-			_0: _rtfeldman$elm_css$Html_Styled_Attributes$css(
-				{
-					ctor: '::',
-					_0: _meilab$meilab$Views_SharedStyles$contentContainerCss,
-					_1: {ctor: '[]'}
-				}),
-			_1: {ctor: '[]'}
-		},
-		{
-			ctor: '::',
-			_0: A2(
-				_rtfeldman$elm_css$Html_Styled$h1,
-				{
-					ctor: '::',
-					_0: _rtfeldman$elm_css$Html_Styled_Attributes$css(
-						{ctor: '[]'}),
-					_1: {ctor: '[]'}
-				},
-				{
-					ctor: '::',
-					_0: _rtfeldman$elm_css$Html_Styled$text(teacher.name),
-					_1: {ctor: '[]'}
-				}),
-			_1: {
-				ctor: '::',
-				_0: _meilab$meilab$Views_SharedViews$renderMarkdown(model.currentContent.markdown),
-				_1: {ctor: '[]'}
-			}
-		});
-};
-var _meilab$meilab$Views_TeacherDetail$teacherDetailView = function (model) {
 	var heroCss = _rtfeldman$elm_css$Css$height(
 		_rtfeldman$elm_css$Css$vh(100));
 	return A2(
@@ -23651,12 +24109,342 @@ var _meilab$meilab$Views_TeacherDetail$teacherDetailView = function (model) {
 			_0: A2(_meilab$meilab$Views_SharedViews$hero, model.currentContent.hero, heroCss),
 			_1: {
 				ctor: '::',
-				_0: _meilab$meilab$Views_TeacherDetail$content(model),
-				_1: {ctor: '[]'}
+				_0: _meilab$meilab$Views_TeacherDetail$renderInfo(teacher),
+				_1: {
+					ctor: '::',
+					_0: _meilab$meilab$Views_TeacherDetail$renderCourse(teacher),
+					_1: {ctor: '[]'}
+				}
 			}
 		});
 };
 
+var _meilab$meilab$Views_FeatureDetail$renderCourse = function (teacher) {
+	return A2(
+		_rtfeldman$elm_css$Html_Styled$div,
+		{ctor: '[]'},
+		{ctor: '[]'});
+};
+var _meilab$meilab$Views_FeatureDetail$renderTeacherTags = function (tag) {
+	return A2(
+		_rtfeldman$elm_css$Html_Styled$div,
+		{
+			ctor: '::',
+			_0: _rtfeldman$elm_css$Html_Styled_Attributes$css(
+				{
+					ctor: '::',
+					_0: _rtfeldman$elm_css$Css$paddingTop(
+						_rtfeldman$elm_css$Css$px(10)),
+					_1: {ctor: '[]'}
+				}),
+			_1: {ctor: '[]'}
+		},
+		{
+			ctor: '::',
+			_0: _rtfeldman$elm_css$Html_Styled$text(tag),
+			_1: {ctor: '[]'}
+		});
+};
+var _meilab$meilab$Views_FeatureDetail$renderInfo = function (teacher) {
+	return A2(
+		_rtfeldman$elm_css$Html_Styled$div,
+		{
+			ctor: '::',
+			_0: _rtfeldman$elm_css$Html_Styled_Attributes$css(
+				{
+					ctor: '::',
+					_0: _rtfeldman$elm_css$Css$backgroundColor(
+						A4(_rtfeldman$elm_css$Css$rgba, 0, 0, 0, 0.8)),
+					_1: {
+						ctor: '::',
+						_0: _rtfeldman$elm_css$Css$maxWidth(
+							_rtfeldman$elm_css$Css$px(650)),
+						_1: {
+							ctor: '::',
+							_0: A2(
+								_rtfeldman$elm_css$Css$margin2,
+								_rtfeldman$elm_css$Css$zero,
+								_rtfeldman$elm_css$Css$pct(5)),
+							_1: {
+								ctor: '::',
+								_0: A2(
+									_rtfeldman$elm_css$Css$padding2,
+									_rtfeldman$elm_css$Css$px(20),
+									_rtfeldman$elm_css$Css$px(25)),
+								_1: {
+									ctor: '::',
+									_0: _rtfeldman$elm_css$Css$position(_rtfeldman$elm_css$Css$absolute),
+									_1: {
+										ctor: '::',
+										_0: _rtfeldman$elm_css$Css$top(
+											_rtfeldman$elm_css$Css$pct(30)),
+										_1: {ctor: '[]'}
+									}
+								}
+							}
+						}
+					}
+				}),
+			_1: {ctor: '[]'}
+		},
+		{
+			ctor: '::',
+			_0: A2(
+				_rtfeldman$elm_css$Html_Styled$div,
+				{
+					ctor: '::',
+					_0: _rtfeldman$elm_css$Html_Styled_Attributes$css(
+						{
+							ctor: '::',
+							_0: _meilab$meilab$Views_SharedStyles$columnGrid,
+							_1: {
+								ctor: '::',
+								_0: _rtfeldman$elm_css$Css$color(_rtfeldman$elm_css$Css_Colors$white),
+								_1: {ctor: '[]'}
+							}
+						}),
+					_1: {ctor: '[]'}
+				},
+				{
+					ctor: '::',
+					_0: A2(
+						_rtfeldman$elm_css$Html_Styled$img,
+						{
+							ctor: '::',
+							_0: _rtfeldman$elm_css$Html_Styled_Attributes$src(teacher.avatar),
+							_1: {
+								ctor: '::',
+								_0: _rtfeldman$elm_css$Html_Styled_Attributes$css(
+									{
+										ctor: '::',
+										_0: _meilab$meilab$Views_SharedStyles$avatarImgCss,
+										_1: {
+											ctor: '::',
+											_0: _rtfeldman$elm_css$Css$width(
+												_rtfeldman$elm_css$Css$em(8)),
+											_1: {
+												ctor: '::',
+												_0: _rtfeldman$elm_css$Css$height(
+													_rtfeldman$elm_css$Css$em(8)),
+												_1: {ctor: '[]'}
+											}
+										}
+									}),
+								_1: {ctor: '[]'}
+							}
+						},
+						{ctor: '[]'}),
+					_1: {
+						ctor: '::',
+						_0: A2(
+							_rtfeldman$elm_css$Html_Styled$p,
+							{
+								ctor: '::',
+								_0: _rtfeldman$elm_css$Html_Styled_Attributes$css(
+									{
+										ctor: '::',
+										_0: _rtfeldman$elm_css$Css$fontSize(
+											_rtfeldman$elm_css$Css$em(1.25)),
+										_1: {
+											ctor: '::',
+											_0: _rtfeldman$elm_css$Css$fontWeight(
+												_rtfeldman$elm_css$Css$int(700)),
+											_1: {ctor: '[]'}
+										}
+									}),
+								_1: {ctor: '[]'}
+							},
+							{
+								ctor: '::',
+								_0: _rtfeldman$elm_css$Html_Styled$text(teacher.name),
+								_1: {ctor: '[]'}
+							}),
+						_1: {
+							ctor: '::',
+							_0: A2(
+								_rtfeldman$elm_css$Html_Styled$div,
+								{
+									ctor: '::',
+									_0: _rtfeldman$elm_css$Html_Styled_Attributes$css(
+										{
+											ctor: '::',
+											_0: _meilab$meilab$Views_SharedStyles$columnGrid,
+											_1: {ctor: '[]'}
+										}),
+									_1: {ctor: '[]'}
+								},
+								A2(_elm_lang$core$List$map, _meilab$meilab$Views_FeatureDetail$renderTeacherTags, teacher.tags)),
+							_1: {ctor: '[]'}
+						}
+					}
+				}),
+			_1: {ctor: '[]'}
+		});
+};
+var _meilab$meilab$Views_FeatureDetail$featureDetailView = function (model) {
+	var teacher = A2(
+		_elm_lang$core$Maybe$withDefault,
+		_meilab$meilab$Teachers$ww,
+		_elm_lang$core$List$head(
+			A2(
+				_elm_lang$core$List$filter,
+				function (item) {
+					return _elm_lang$core$Native_Utils.eq(item.route, model.currentContent.route);
+				},
+				_meilab$meilab$Teachers$teachers)));
+	var heroCss = _rtfeldman$elm_css$Css$height(
+		_rtfeldman$elm_css$Css$vh(100));
+	return A2(
+		_rtfeldman$elm_css$Html_Styled$div,
+		{
+			ctor: '::',
+			_0: _rtfeldman$elm_css$Html_Styled_Attributes$css(
+				{
+					ctor: '::',
+					_0: _rtfeldman$elm_css$Css$width(
+						_rtfeldman$elm_css$Css$pct(100)),
+					_1: {ctor: '[]'}
+				}),
+			_1: {ctor: '[]'}
+		},
+		{
+			ctor: '::',
+			_0: A2(_meilab$meilab$Views_SharedViews$hero, model.currentContent.hero, heroCss),
+			_1: {
+				ctor: '::',
+				_0: _meilab$meilab$Views_FeatureDetail$renderInfo(teacher),
+				_1: {
+					ctor: '::',
+					_0: _meilab$meilab$Views_FeatureDetail$renderCourse(teacher),
+					_1: {ctor: '[]'}
+				}
+			}
+		});
+};
+
+var _meilab$meilab$Views_CourseDetail$renderInfo = function (course) {
+	return A2(
+		_rtfeldman$elm_css$Html_Styled$div,
+		{
+			ctor: '::',
+			_0: _rtfeldman$elm_css$Html_Styled_Attributes$css(
+				{
+					ctor: '::',
+					_0: _rtfeldman$elm_css$Css$backgroundColor(
+						A4(_rtfeldman$elm_css$Css$rgba, 0, 0, 0, 0.8)),
+					_1: {
+						ctor: '::',
+						_0: _rtfeldman$elm_css$Css$width(
+							_rtfeldman$elm_css$Css$pct(100)),
+						_1: {
+							ctor: '::',
+							_0: _rtfeldman$elm_css$Css$height(
+								_rtfeldman$elm_css$Css$vh(100)),
+							_1: {
+								ctor: '::',
+								_0: A2(
+									_rtfeldman$elm_css$Css$margin2,
+									_rtfeldman$elm_css$Css$zero,
+									_rtfeldman$elm_css$Css$pct(5)),
+								_1: {
+									ctor: '::',
+									_0: A2(
+										_rtfeldman$elm_css$Css$padding2,
+										_rtfeldman$elm_css$Css$px(20),
+										_rtfeldman$elm_css$Css$px(25)),
+									_1: {ctor: '[]'}
+								}
+							}
+						}
+					}
+				}),
+			_1: {ctor: '[]'}
+		},
+		{
+			ctor: '::',
+			_0: A2(
+				_rtfeldman$elm_css$Html_Styled$iframe,
+				{
+					ctor: '::',
+					_0: _rtfeldman$elm_css$Html_Styled_Attributes$css(
+						{
+							ctor: '::',
+							_0: _rtfeldman$elm_css$Css$width(
+								_rtfeldman$elm_css$Css$pct(100)),
+							_1: {
+								ctor: '::',
+								_0: _rtfeldman$elm_css$Css$height(
+									_rtfeldman$elm_css$Css$pct(90)),
+								_1: {
+									ctor: '::',
+									_0: _rtfeldman$elm_css$Css$borderWidth(
+										_rtfeldman$elm_css$Css$px(0)),
+									_1: {ctor: '[]'}
+								}
+							}
+						}),
+					_1: {
+						ctor: '::',
+						_0: _rtfeldman$elm_css$Html_Styled_Attributes$seamless(true),
+						_1: {
+							ctor: '::',
+							_0: _rtfeldman$elm_css$Html_Styled_Attributes$src(course.videoUrl),
+							_1: {ctor: '[]'}
+						}
+					}
+				},
+				{ctor: '[]'}),
+			_1: {ctor: '[]'}
+		});
+};
+var _meilab$meilab$Views_CourseDetail$courseDetailView = function (model) {
+	var course = A2(
+		_elm_lang$core$Maybe$withDefault,
+		_meilab$meilab$Courses$xiaozhuchi,
+		_elm_lang$core$List$head(
+			A2(
+				_elm_lang$core$List$filter,
+				function (item) {
+					return _elm_lang$core$Native_Utils.eq(item.route, model.currentContent.route);
+				},
+				_meilab$meilab$Courses$courses)));
+	return A2(
+		_rtfeldman$elm_css$Html_Styled$div,
+		{
+			ctor: '::',
+			_0: _rtfeldman$elm_css$Html_Styled_Attributes$css(
+				{
+					ctor: '::',
+					_0: _meilab$meilab$Views_SharedStyles$columnGrid,
+					_1: {
+						ctor: '::',
+						_0: _rtfeldman$elm_css$Css$width(
+							_rtfeldman$elm_css$Css$pct(100)),
+						_1: {
+							ctor: '::',
+							_0: _rtfeldman$elm_css$Css$top(
+								_rtfeldman$elm_css$Css$px(64)),
+							_1: {ctor: '[]'}
+						}
+					}
+				}),
+			_1: {ctor: '[]'}
+		},
+		{
+			ctor: '::',
+			_0: _meilab$meilab$Views_CourseDetail$renderInfo(course),
+			_1: {ctor: '[]'}
+		});
+};
+
+var _meilab$meilab$Views$notFoundView = A2(
+	_rtfeldman$elm_css$Html_Styled$div,
+	{ctor: '[]'},
+	{
+		ctor: '::',
+		_0: _rtfeldman$elm_css$Html_Styled$text('Can not find your page'),
+		_1: {ctor: '[]'}
+	});
 var _meilab$meilab$Views$promotion = A2(
 	_rtfeldman$elm_css$Html_Styled$div,
 	{
@@ -23722,8 +24510,14 @@ var _meilab$meilab$Views$view = function (model) {
 				return _meilab$meilab$Views_Join$joiningView;
 			case 'TeacherDetailRoute':
 				return _meilab$meilab$Views_TeacherDetail$teacherDetailView(model);
-			default:
+			case 'CourseDetailRoute':
+				return _meilab$meilab$Views_CourseDetail$courseDetailView(model);
+			case 'PostDetailRoute':
 				return _meilab$meilab$Views_Page$pageView(model);
+			case 'FeatureDetailRoute':
+				return _meilab$meilab$Views_FeatureDetail$featureDetailView(model);
+			default:
+				return _meilab$meilab$Views$notFoundView;
 		}
 	}();
 	return A2(
